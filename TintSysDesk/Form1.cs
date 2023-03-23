@@ -43,7 +43,30 @@ namespace TintSysDesk
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Text = comboBox1.SelectedIndex.ToString();
+        }
 
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Nivel nivel = new Nivel(1, "Estoquista", "EST");
+            nivel.Atualizar();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Nivel nivel = new Nivel();
+            int msg = nivel.Excluir(2);
+            if (msg ==1)
+                MessageBox.Show("Nível excluido com sucesso!");
+            else if (msg ==2)
+                MessageBox.Show("Falha ao excluir um nivel");
+            else (msg ==0)
+                    MessageBox.Show("Falha ao excluir");
         }
     }
 }
