@@ -59,14 +59,14 @@ namespace TintSysDesk
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Nivel nivel = new Nivel();
-            int msg = nivel.Excluir(2);
-            if (msg ==1)
-                MessageBox.Show("Nível excluido com sucesso!");
-            else if (msg ==2)
-                MessageBox.Show("Falha ao excluir um nivel");
-            else (msg ==0)
-                    MessageBox.Show("Falha ao excluir");
+            //Nivel nivel = new Nivel();
+            //int msg = nivel.Excluir(2);
+            //if (msg ==1)
+            //    MessageBox.Show("Nível excluido com sucesso!");
+            //else if (msg ==2)
+            //    MessageBox.Show("Falha ao excluir um nivel");
+            //else (msg ==0)
+            //        MessageBox.Show("Falha ao excluir");
         }
     }
 }
