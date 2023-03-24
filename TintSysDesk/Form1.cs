@@ -21,6 +21,7 @@ namespace TintSysDesk
         private void Form1_Load(object sender, EventArgs e)
         {
             var n = Nivel.ObterPorID(1);
+            //arrumarjhqdsq
             label1.Text = n.Id.ToString();
             label2.Text = n.Nome;
             label3.Text = n.Sigla;

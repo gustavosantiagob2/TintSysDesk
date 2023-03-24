@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Asn1.Cmp;
+
 
 namespace TintSysClass
 {
@@ -15,7 +15,7 @@ namespace TintSysClass
 
         public static MySqlCommand Abir()
         {
-            strConn = @"server =127.0.0.1;database =ti93sysdb; port =3306; user id =root; pasaword =usbw";
+            strConn = @"server =127.0.0.1;database =ti93sysdb; port =3306; user id =root; password =usbw";
             MySqlCommand cmd = new MySqlCommand();
 
             try // Fluxo alternativos ( Esp Uc Doc) documento de espeficação de caso de uso  
