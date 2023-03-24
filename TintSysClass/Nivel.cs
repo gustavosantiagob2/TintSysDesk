@@ -58,6 +58,11 @@ namespace TintSysClass
             // fecha a conexão
             Banco.Fechar(cmd);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_id"></param>
+        /// <returns></returns>
         public static Nivel ObterPorID(int _id)
         {
             var cmd = Banco.Abir();
