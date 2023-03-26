@@ -23,7 +23,7 @@ namespace TintSysClass
         public string Nome { get { return nome; } set { nome = value; } }
         public string Sigla { get { return sigla; } set { sigla = value; } }
 
-        //Metodos contrutores - int x = new int ();
+        //Metodos construtores - int x = new int ();
         public Nivel() { } // construtor vazio
         public Nivel(string _nome, string _sigla)
         {

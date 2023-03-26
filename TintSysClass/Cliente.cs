@@ -9,6 +9,9 @@ using MySql.Data.MySqlClient;
 
 namespace TintSysClass
 {
+    /// <summary>
+    /// Classe cliente
+    /// </summary>
     public class Cliente
     {
         // Atributos da classe
@@ -84,7 +87,7 @@ namespace TintSysClass
         /// <summary>
         /// Insere no Banco clientes conforme a sequência de Valores
         /// </summary>
-        public void inserir ()
+        public void Inserir ()
         {
             MySqlCommand comando = Banco.Abir();
             comando.CommandText = "insert clientes (nome, cpf, email, datacad, ativo" +
