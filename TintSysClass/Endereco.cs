@@ -165,5 +165,13 @@ namespace TintSysClass
             cmd.ExecuteNonQuery();
             Banco.Fechar(cmd);
         }    
+
+        public void Excluir(int id)
+        {
+            var cmd = Banco.Abir();
+            cmd.CommandText = "delete from enderecos where id ="=id;
+            cmd.ExecuteNonQuery();
+            Banco.Fechar(cmd);
+        }
     }
 }
