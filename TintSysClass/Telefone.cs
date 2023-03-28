@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace TintSysClass
 {
-    internal class Telefone
+    public class Telefone
     {
         // Atributos da classe
         private int id;
@@ -46,10 +46,11 @@ namespace TintSysClass
         /// <summary>
         /// Insere no Banco usuários conforme a sequência de Valores
         /// </summary>
-        public void Inserir()
+        public void Inserir(int cliente_id)
         {
             MySqlCommand cmd = Banco.Abir();
-            cmd.CommandText = "insert telefones (numero, tipo) values (@numero, @tipo)";
+            cmd.CommandText = "insert telefones (cliente_id, numero, tipo) values (@numero, @tipo)";
+            cmd.Parameters.AddWithValue("@cliente_id", Cliente);
             cmd.Parameters.AddWithValue("@numero", Numero);
             cmd.Parameters.AddWithValue("@tipo", Tipo);
             cmd.ExecuteNonQuery();

@@ -29,6 +29,8 @@ namespace TintSysClass
         public string Email { get => email; set => email = value; }
         public DateTime Datacad { get => datacad; set => datacad = value; }
         public bool Ativo { get => ativo; set => ativo = value; }
+        //public List<Endereco> Enderecos { get; set; }
+        //public List<Telefone> Telefone { get; set; }
 
         //Metodos contrutores
         /// <summary>
@@ -44,7 +46,9 @@ namespace TintSysClass
         /// <param name="email"></param>
         /// <param name="datacad"></param>
         /// <param name="ativo"></param>
-        public Cliente (int id, string nome, string cpf, string email, DateTime datacad, bool ativo )
+        public Cliente (int id, string nome, string cpf, string email, DateTime datacad, bool ativo
+            //List<Telefone> telefones, List<Endereco> Enderecos
+            )
         {
             Id = id;
             Nome = nome;
@@ -52,6 +56,8 @@ namespace TintSysClass
             Email = email;
             Datacad = datacad;
             Ativo = ativo;
+            //telefones = telefones;
+            //Enderecos = Enderecos;
         }
         /// <summary>
         /// Metodo contrutor que retorna os campos da tabela sem o id e ativo
@@ -144,13 +150,15 @@ namespace TintSysClass
             MySqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read()) 
             {
-                Lista.Add(new Cliente(
+                Lista.Add (new Cliente(
                    dr.GetInt32(0),
                     dr.GetString(1),
                     dr.GetString(2),
                     dr.GetString(3),
                     dr.GetDateTime(4),
                     dr.GetBoolean(5)
+                    //Telefone.ObterPorId(dr.GetInt32(6),
+                    //Endereco.ObterPorId(dr.GetInt32(7)
                     ));
             }
             Banco.Fechar(cmd);
