@@ -162,7 +162,7 @@ namespace TintSysClass
             if (_nome != string.Empty)
                 cmd.CommandText = "select * from usuarios where like '%" + _nome + "%'";
             else
-                cmd.CommandText = "select * from usuario";
+                cmd.CommandText = "select * from usuarios";
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {

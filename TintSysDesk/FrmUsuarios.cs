@@ -24,7 +24,7 @@ namespace TintSysDesk
                 txtNome.Text, txtEmail.Text, txtSenha.Text, 
                 Nivel.ObterPorID(Convert.ToInt32(comboBox1.SelectedValue))
                 );
-            Usuario.Inserir();
+            usuario.Inserir();
             txtId.Text = usuario.Id.ToString();
         }
 
@@ -33,6 +33,12 @@ namespace TintSysDesk
             comboBox1.DataSource = Nivel.Listar();
             comboBox1.ValueMember = "Id";
             comboBox1.DisplayMember = "Nome";
+
+           List<Usuario> lista = Usuario.Listar();
+            foreach (Usuario usuario in lista)
+            {
+                dgvUsuarios.Rows.Add();
+            }
         }
     }
 }

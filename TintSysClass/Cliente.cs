@@ -22,6 +22,7 @@ namespace TintSysClass
         private DateTime datacad;
         private bool ativo;
 
+
         //Propriedades  (Encapsulamento)
         public int Id { get => id; set => id = value; }
         public string Nome { get => nome; set => nome = value; }
@@ -29,6 +30,9 @@ namespace TintSysClass
         public string Email { get => email; set => email = value; }
         public DateTime Datacad { get => datacad; set => datacad = value; }
         public bool Ativo { get => ativo; set => ativo = value; }
+        public List<Endereco> Enderecos { get; set; }
+        public List<Telefone> Telefones { get; set; }
+
         //public List<Endereco> Enderecos { get; set; }
         //public List<Telefone> Telefone { get; set; }
 
@@ -81,13 +85,28 @@ namespace TintSysClass
         /// <param name="email"></param>
         /// <param name="datacad"></param>
         /// <param name="ativo"></param>
-        public Cliente(string nome, string cpf, string email, DateTime datacad, bool ativo)
+        public Cliente(string nome, string cpf, string email, DateTime datacad, bool ativo, List<Telefone> telefones, List<Endereco> enderecos)
         { 
             Nome = nome;
             Cpf = cpf;
             Email = email;
             Datacad = datacad;
             Ativo = ativo;
+            Telefones = telefones;
+            Enderecos = enderecos;
+        }
+        public Cliente(string nome, string cpf, string email, DateTime datacad, bool ativo)
+        {
+            Nome = nome;
+            Cpf = cpf;
+            Email = email;
+            Datacad = datacad;
+            Ativo = ativo;
+        }
+        public Cliente(int id)
+        {
+            Telefones = Telefone.ListarPorCliente(Id);
+            Enderecos = Endereco.ListarPorCliente(Id);
         }
         //Metodos da classe Cliente
         /// <summary>
@@ -106,6 +125,14 @@ namespace TintSysClass
             comando.ExecuteNonQuery();
             comando.CommandText = "select @@indentity";
             Id = Convert.ToInt32(comando.ExecuteScalar());
+            foreach (var endereco in Enderecos)
+            {
+                endereco.Inserir(Id);
+            }
+            foreach (var telefone in Telefones)
+            {
+                telefone.Inserir(Id);
+            }
             Banco.Fechar(comando);
         }
         /// <summary>
@@ -139,15 +166,12 @@ namespace TintSysClass
         /// </summary>
         /// <param name="_nome">Nome do cliente que você deseja pesquisar</param>
         /// <returns></returns>
-        public static List<Cliente> Listar( string _nome = "")
+        public static List<Cliente> Listar()
         {
             List<Cliente> Lista = new List<Cliente>();
-            MySqlCommand cmd = Banco.Abir();
-            if (_nome != string.Empty)
-                cmd.CommandText = "select * from clientes where like '%" + _nome + "%'";
-            else
-                cmd.CommandText = "select * from clientes";
-            MySqlDataReader dr = cmd.ExecuteReader();
+            var cmd = Banco.Abir();
+                cmd.CommandText = "select * from clientes order by nome asc";
+            var dr = cmd.ExecuteReader();
             while (dr.Read()) 
             {
                 Lista.Add (new Cliente(
@@ -211,6 +235,5 @@ namespace TintSysClass
             cmd.ExecuteNonQuery();
             Banco.Fechar(cmd);
         }
-        //// EEEEEEEEEEEEEDDDDDDDDDDDDDDDDDDTTTTTTTTTTTTTTT
     }
 }
