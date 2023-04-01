@@ -109,11 +109,11 @@ namespace TintSysClass
             cmd.ExecuteNonQuery();
             Banco.Fechar(cmd);
         }
-        public bool Excluir (int _id)
+        public bool Excluir ()
         {
             bool confirma = false;
             var cmd = Banco.Abir();
-            cmd.CommandText = "delete from niveis where id = "+_id;
+            cmd.CommandText = "delete from niveis where id = " +id;
             if (cmd.ExecuteNonQuery() > 0)
             {
                 confirma = true;

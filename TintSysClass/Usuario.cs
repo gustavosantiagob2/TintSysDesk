@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -112,14 +113,14 @@ namespace TintSysClass
         public void Inserir() 
         {
             var cmd = Banco.Abir();
-            cmd.CommandText = "insert usuarios (nome ,email, senha ,nivel_id ,ativo " +
-                "values (@nome, @email, md5(@senha), @nivel, 1 )";
-            cmd.Parameters.Add("@nome",MySqlDbType.VarChar).Value = Nome;
+            cmd.CommandText = "insert usuarios (nome, email, senha, nivel_id, ativo) " +
+                "values(@nome, @email, md5(@senha), @nivel, 1) ";
+            cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = Nome;
             cmd.Parameters.Add("@email", MySqlDbType.VarChar).Value = Email;
             cmd.Parameters.Add("@senha", MySqlDbType.VarChar).Value = Senha;
-            cmd.Parameters.Add("@nivel", MySqlDbType.VarChar).Value = Nivel.Id;
+            cmd.Parameters.Add("@nivel", MySqlDbType.Int32).Value = Nivel.Id;
             cmd.ExecuteNonQuery();
-            cmd.CommandText = "select @@indentity";
+            cmd.CommandText = "select @@identity";
             Id = Convert.ToInt32(cmd.ExecuteScalar());
             Banco.Fechar(cmd);
         }
