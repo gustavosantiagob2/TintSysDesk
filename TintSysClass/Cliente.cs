@@ -103,6 +103,12 @@ namespace TintSysClass
             Datacad = datacad;
             Ativo = ativo;
         }
+        public Cliente(string nome, string cpf, string email)
+        {
+            Nome = nome;
+            Cpf = cpf;
+            Email = email;
+        }
         public Cliente(int id)
         {
             Telefones = Telefone.ListarPorCliente(Id);
@@ -115,15 +121,15 @@ namespace TintSysClass
         public void Inserir ()
         {
             MySqlCommand comando = Banco.Abir();
-            comando.CommandText = "insert clientes (nome, cpf, email, datacad, ativo" +
-                "values (@nome, @cpf, @email, @datacad, 1)) ";
+            comando.CommandText = "insert clientes (nome, cpf, email, datacad, ativo)" +
+                "values (@nome, @cpf, @email, @datacad, 1) ";
             comando.Parameters.AddWithValue("@nome", Nome);
             comando.Parameters.AddWithValue("@cpf", Cpf);
             comando.Parameters.AddWithValue("@email", email);
             //comando.Parameters.AddWithValue("@datacad",datacad);
             comando.Parameters.Add("@datacad", MySqlDbType.Date).Value = datacad;
             comando.ExecuteNonQuery();
-            comando.CommandText = "select @@indentity";
+            comando.CommandText = "select @@identity";
             Id = Convert.ToInt32(comando.ExecuteScalar());
             foreach (var endereco in Enderecos)
             {

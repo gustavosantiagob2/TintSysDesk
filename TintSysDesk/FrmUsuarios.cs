@@ -125,7 +125,7 @@ namespace TintSysDesk
                 txtNome.Text = u.Nome;
                 txtEmail.Text = u.Email;
                 txtSenha.Text = u.Senha;
-                comboBox1.Text = Convert.ToString   (u.Nivel);
+                comboBox1.Text = Convert.ToString(u.Nivel);
             }
             else
             {
@@ -149,6 +149,11 @@ namespace TintSysDesk
         }
 
         private void txtId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvNiveis_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

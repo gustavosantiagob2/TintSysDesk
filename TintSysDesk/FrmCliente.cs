@@ -89,6 +89,7 @@ namespace TintSysDesk
             Endereco endereco = new Endereco(Convert.ToString(mskCepCliente.Text), txtlogradouroCliente.Text, txtNomeCliente.Text, txtComplementoCliente.Text, 
                 txtBairroCliente.Text, txtCidadeCliente.Text, txtEstadoCliente.Text, txtUfCliente.Text,cmbTipoEndereco.Text,
                 Cliente.ObterPorId(Convert.ToInt32(txtidCliente.Text)));
+            txtidCliente.Text = cliente_id.ToString();
             endereco.Inserir(cliente_id);
             CarregaGridCliente();
         }
@@ -96,6 +97,7 @@ namespace TintSysDesk
         {
 
             Telefone telefone = new Telefone(cmbTipoTelefone.Text,txtNumeroTelefone.Text);
+            txtidCliente.Text = cliente_id.ToString();
             telefone.Inserir(cliente_id);
 
         }
@@ -113,6 +115,11 @@ namespace TintSysDesk
                 CarregaGridCliente();
             }
             
+        }
+
+        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
