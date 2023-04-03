@@ -120,8 +120,8 @@ namespace TintSysClass
             comando.Parameters.AddWithValue("@nome", Nome);
             comando.Parameters.AddWithValue("@cpf", Cpf);
             comando.Parameters.AddWithValue("@email", email);
-            comando.Parameters.AddWithValue("@datacad",datacad);
-            comando.Parameters.AddWithValue("@ativo", ativo);
+            //comando.Parameters.AddWithValue("@datacad",datacad);
+            comando.Parameters.Add("@datacad", MySqlDbType.Date).Value = datacad;
             comando.ExecuteNonQuery();
             comando.CommandText = "select @@indentity";
             Id = Convert.ToInt32(comando.ExecuteScalar());
@@ -181,7 +181,7 @@ namespace TintSysClass
                     dr.GetString(3),
                     dr.GetDateTime(4),
                     dr.GetBoolean(5)
-                    //Telefone.ObterPorId(dr.GetInt32(6),
+                    //Telefone.ObterPorId(dr.GetInt32(6)
                     //Endereco.ObterPorId(dr.GetInt32(7)
                     ));
             }

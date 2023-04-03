@@ -45,7 +45,6 @@ namespace TintSysDesk
 
         public void CarregaGrid()
         {
-
             List<Usuario> lista = Usuario.Listar();
             int linha = 0;
             dgvUsuarios.Rows.Clear();
@@ -130,13 +129,28 @@ namespace TintSysDesk
             }
             else
             {
-                MessageBox.Show("Nível não cadastrado" +
+                MessageBox.Show("Usuário não cadastrado" +
                     "                                     Erro de Consulta ");
                 txtNome.Clear();
                 txtEmail.Clear();
                 txtSenha.Clear();
                 comboBox1.Focus();
             }
+        }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtId_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
