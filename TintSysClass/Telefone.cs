@@ -13,15 +13,24 @@ namespace TintSysClass
         private int id;
         private string numero;
         private string tipo;
+        private Cliente idCliente;
 
         //Propriedades (encapsulamento) 
         public int Id { get => id; set => id = value; }
         public string Numero { get => numero; set => numero = value; }
         public string Tipo { get => tipo; set => tipo = value; }
-     
+        public Cliente IdCliente { get => idCliente; set => idCliente = value; }
+
 
         //Metodos construtores
         public Telefone() { }
+        public Telefone(int id, string numero, string tipo, Cliente idCliente)
+        {
+            Id = id;
+            Numero = numero;
+            Tipo = tipo;
+            IdCliente = idCliente;
+        }
         public Telefone(int id, string numero, string tipo)
         {
             Id = id;

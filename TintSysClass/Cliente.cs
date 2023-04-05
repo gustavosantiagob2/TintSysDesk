@@ -122,23 +122,14 @@ namespace TintSysClass
         {
             MySqlCommand comando = Banco.Abir();
             comando.CommandText = "insert clientes (nome, cpf, email, datacad, ativo)" +
-                "values (@nome, @cpf, @email, @datacad, 1) ";
+                "values (@nome, @cpf, @email, default, default) ";
             comando.Parameters.AddWithValue("@nome", Nome);
             comando.Parameters.AddWithValue("@cpf", Cpf);
             comando.Parameters.AddWithValue("@email", email);
-            //comando.Parameters.AddWithValue("@datacad",datacad);
-            comando.Parameters.Add("@datacad", MySqlDbType.Date).Value = datacad;
             comando.ExecuteNonQuery();
             comando.CommandText = "select @@identity";
             Id = Convert.ToInt32(comando.ExecuteScalar());
-            foreach (var endereco in Enderecos)
-            {
-                endereco.Inserir(Id);
-            }
-            foreach (var telefone in Telefones)
-            {
-                telefone.Inserir(Id);
-            }
+            
             Banco.Fechar(comando);
         }
         /// <summary>

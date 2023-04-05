@@ -19,7 +19,7 @@ namespace TintSysDesk
 
         private void FrmCLiente2_Load(object sender, EventArgs e)
         {
-            tpgEnderecos.Focus();
+           
         }
     }
 }
