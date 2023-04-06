@@ -64,7 +64,7 @@ namespace TintSysClass
             var cmd = Banco.Abir();
             if (descricao.Length > 0)
             {
-                cmd.CommandText = "select * from produtos where descricao like ='%"+descricao+"%'";
+                cmd.CommandText = "select * from produtos where descricao like '%"+descricao+"%'";
             }
             else
             {
@@ -108,29 +108,30 @@ namespace TintSysClass
         public void Atualizar ()
         {
             var cmd = Banco.Abir();
-            cmd.CommandText = "update produtos set descricao = @descricao, unidade = @unidade, codbar = @codbar, preco = @preco, desconto = @desconto where id = @id )";
+            cmd.CommandText = "update produtos set descricao = @descricao, unidade = @unidade, codbar = @codbar, preco = @preco, desconto = @desconto, descontinuado = @descontinuado where id = @id ";
             cmd.Parameters.AddWithValue("@id",Id);
             cmd.Parameters.AddWithValue("@descricao", Descricao);
             cmd.Parameters.AddWithValue("@unidade", Unidade);
             cmd.Parameters.AddWithValue("@codbar", CodBar);
             cmd.Parameters.AddWithValue("@preco", Preco);
             cmd.Parameters.AddWithValue("@desconto", Desconto);
+            cmd.Parameters.AddWithValue("@descontinuado", Descontinuado);
             cmd.ExecuteNonQuery();
             Banco.Fechar(cmd);
         }
-        public void Arquivar()
+        public  static void Arquivar(int id)
         {
             var cmd = Banco.Abir();
             cmd.CommandText = "update produtos set descontinuado = 1 where id = @id";
-            cmd.Parameters.AddWithValue("@id", Id);
+            cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();
             Banco.Fechar(cmd);
         }
-        public void Restaurar()
+        public static void Restaurar(int id)
         {
             var cmd = Banco.Abir();
             cmd.CommandText = "update produtos set descontinuado = 0 where id = @id";
-            cmd.Parameters.AddWithValue("@id", Id);
+            cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();
             Banco.Fechar(cmd);
         }

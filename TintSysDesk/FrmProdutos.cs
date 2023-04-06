@@ -39,9 +39,13 @@ namespace TintSysDesk
                 MessageBox.Show("Falha ao gravar o produto!!", "Erro de Gravação");
             }
         }
-        private void CarregarGrid()
+        private void CarregarGrid(string texto = "")
         {
-            var lista = Produto.Listar();
+            List<Produto> lista = null;
+            if (Text!= string.Empty)
+                 lista = Produto.Listar(texto);
+            else
+                 lista = Produto.Listar();
             int count = 0;
             dgvProduto.Rows.Clear();
             foreach (Produto item in lista) 
@@ -51,9 +55,9 @@ namespace TintSysDesk
                 dgvProduto.Rows[count].Cells[1].Value = item.Descricao;
                 dgvProduto.Rows[count].Cells[2].Value = item.Unidade;
                 dgvProduto.Rows[count].Cells[3].Value = item.CodBar;
-                dgvProduto.Rows[count].Cells[4].Value = item.Preco.ToString("R$ ##0.00");
-                dgvProduto.Rows[count].Cells[5].Value = item.Desconto.ToString("#.##%");
-                dgvProduto.Rows[count].Cells[3].Value = item.Descontinuado;
+                dgvProduto.Rows[count].Cells[4].Value = item.Preco.ToString();
+                dgvProduto.Rows[count].Cells[5].Value = item.Desconto.ToString();
+                dgvProduto.Rows[count].Cells[6].Value = item.Descontinuado;
                 count++;
             }
         }
@@ -71,13 +75,59 @@ namespace TintSysDesk
                 txtId.ReadOnly = true;
                 btnBuscar.Text = "...";
                 var produto = Produto.ObterPorId(int.Parse(txtId.Text));
-                txtDescricao.Text = produto.Descricao;
-                txtCodBar.Text = produto.CodBar;
-                txtDesconto.Text = produto.Desconto.ToString("#,##%");
-                mskPreco.Text = produto.Preco.ToString("R$ ##.00");
-                //cmbUnidade.SelectedIndex = 0;
+                if (produto.Id >0)
+                {
+
+                    txtDescricao.Text = produto.Descricao;
+                    txtCodBar.Text = produto.CodBar;
+                    txtDesconto.Text = produto.Desconto.ToString();
+                    mskPreco.Text = produto.Preco.ToString();
+                    cmbUnidade.Text = produto.Unidade;
+                    chkDescontinuado.Checked = produto.Descontinuado;
+                    btnEditar.Enabled = true;
+                }
+
 
             }
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Produto produto = new Produto(
+                 int.Parse(txtId.Text),txtDescricao.Text, cmbUnidade.Text, txtCodBar.Text, double.Parse(mskPreco.Text), double.Parse(txtDesconto.Text),chkDescontinuado.Checked);
+            produto.Atualizar();
+            CarregarGrid();
+        }
+
+        private void dgvProduto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtPesquisar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtPesquisar.Text.Length > 1)
+            {
+                CarregarGrid(txtPesquisar.Text);
+            }
+            else if(txtPesquisar.Text.Length < 2)
+            {
+                CarregarGrid();
+            }
+        }
+
+        private void chkDescontinuado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkDescontinuado.Checked )
+                Produto.Restaurar(int.Parse(txtId.Text));
+            else
+                Produto.Arquivar(int.Parse(txtId.Text));
+            CarregarGrid();
         }
     }
 }
