@@ -104,11 +104,6 @@ namespace TintSysDesk
             CarregarGrid();
         }
 
-        private void dgvProduto_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void txtPesquisar_TextChanged(object sender, EventArgs e)
         {
             if (txtPesquisar.Text.Length > 1)
@@ -126,12 +121,28 @@ namespace TintSysDesk
             if (txtId.Text != string.Empty)
             {
                 if (chkDescontinuado.Checked)
-                    Produto.Restaurar(int.Parse(txtId.Text));
-                else
                     Produto.Arquivar(int.Parse(txtId.Text));
+                else
+                    Produto.Restaurar(int.Parse(txtId.Text));
                 CarregarGrid();
             }
           
+        }
+
+        private void dgvProduto_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dgv = (DataGridView)sender;
+            //dgvProduto.Rows.[e.RowIndex].Cells[e.ColumnIndex];
+            if (e.ColumnIndex == 6)
+            {
+                 bool x = Convert.ToBoolean(dgvProduto.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
+                 int id = Convert.ToInt32(dgvProduto.Rows[e.RowIndex].Cells[0].Value);
+                if (x)
+                    Produto.Restaurar(id);
+                else
+                    Produto.Arquivar(id);
+                CarregarGrid();
+            }
         }
     }
 }

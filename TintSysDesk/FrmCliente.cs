@@ -21,8 +21,6 @@ namespace TintSysDesk
         }
         private void FrmCliente_Load(object sender, EventArgs e)
         {
-            CarregarEndereco();
-
 
         }
 
@@ -38,11 +36,7 @@ namespace TintSysDesk
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Cliente cliente = new Cliente(
-               mktCpf.Text,txtNomeCliente.Text, txtEmailCliente.Text
-                );
-            cliente.Inserir();
-            txtidCliente.Text = cliente.Id.ToString();
+            InserirCLiente();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -54,6 +48,14 @@ namespace TintSysDesk
                 );
             endereco.Inserir(txtidCliente.TextLength);
             txtidCliente.Text = endereco.IdCliente.ToString();
+        }
+        private void InserirCLiente()
+        {
+            Cliente cliente = new Cliente(
+               mktCpf.Text, txtNomeCliente.Text, txtEmailCliente.Text
+                );
+            cliente.Inserir();
+            txtidCliente.Text = cliente.Id.ToString();
         }
 
         private void btnInserirTelefone_Click(object sender, EventArgs e)

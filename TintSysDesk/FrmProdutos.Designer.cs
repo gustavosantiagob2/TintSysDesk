@@ -88,9 +88,10 @@
             this.dgvProduto.RowHeadersVisible = false;
             this.dgvProduto.RowHeadersWidth = 51;
             this.dgvProduto.RowTemplate.Height = 24;
+            this.dgvProduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProduto.Size = new System.Drawing.Size(500, 122);
             this.dgvProduto.TabIndex = 0;
-            this.dgvProduto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduto_CellContentClick);
+            this.dgvProduto.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduto_CellDoubleClick);
             // 
             // Column1
             // 
