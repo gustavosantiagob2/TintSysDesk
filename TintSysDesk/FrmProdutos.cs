@@ -123,11 +123,15 @@ namespace TintSysDesk
 
         private void chkDescontinuado_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkDescontinuado.Checked )
-                Produto.Restaurar(int.Parse(txtId.Text));
-            else
-                Produto.Arquivar(int.Parse(txtId.Text));
-            CarregarGrid();
+            if (txtId.Text != string.Empty)
+            {
+                if (chkDescontinuado.Checked)
+                    Produto.Restaurar(int.Parse(txtId.Text));
+                else
+                    Produto.Arquivar(int.Parse(txtId.Text));
+                CarregarGrid();
+            }
+          
         }
     }
 }
