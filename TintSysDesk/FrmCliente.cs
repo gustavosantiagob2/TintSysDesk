@@ -21,6 +21,7 @@ namespace TintSysDesk
         }
         private void FrmCliente_Load(object sender, EventArgs e)
         {
+            CarregaGridCliente();
 
         }
 
@@ -84,6 +85,26 @@ namespace TintSysDesk
                 dgvEnderecos.Rows[linha].Cells[8].Value = endereco.Tipo;
                 dgvEnderecos.Rows[linha].Cells[0].Value = endereco.IdCliente;
                 linha++;
+            }
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            CarregaGridCliente();
+        }
+        public void CarregaGridCliente()
+        {
+            List<Cliente> lista = Cliente.Listar();
+            int count = 0;
+            dgvCliente.Rows.Clear();
+            foreach (Cliente cliente in lista) 
+            {
+                dgvCliente.Rows.Add();
+                dgvCliente.Rows[count].Cells[0].Value = cliente.Id.ToString();
+                dgvCliente.Rows[count].Cells[1].Value = cliente.Cpf;
+                dgvCliente.Rows[count].Cells[2].Value = cliente.Nome;
+                dgvCliente.Rows[count].Cells[3].Value = cliente.Email;
+                count++;
             }
         }
     }

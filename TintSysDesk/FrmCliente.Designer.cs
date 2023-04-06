@@ -86,6 +86,11 @@
             this.cmbTipoTelefone = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.dgvCliente = new System.Windows.Forms.DataGridView();
+            this.clnIdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnNomeCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnEmialCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -93,6 +98,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvEnderecos)).BeginInit();
             this.tpgTelefones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelefone)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -109,6 +115,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.dgvCliente);
             this.tabPage1.Controls.Add(this.btnEdiatrCliente);
             this.tabPage1.Controls.Add(this.btnConsultarCliente);
             this.tabPage1.Controls.Add(this.btnInserirCliente);
@@ -735,6 +742,51 @@
             this.label16.TabIndex = 4;
             this.label16.Text = "NÚMERO : ";
             // 
+            // dgvCliente
+            // 
+            this.dgvCliente.AllowUserToAddRows = false;
+            this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clnIdCliente,
+            this.clnCpf,
+            this.clnNomeCliente,
+            this.clnEmialCliente});
+            this.dgvCliente.Location = new System.Drawing.Point(13, 277);
+            this.dgvCliente.Name = "dgvCliente";
+            this.dgvCliente.ReadOnly = true;
+            this.dgvCliente.RowHeadersVisible = false;
+            this.dgvCliente.Size = new System.Drawing.Size(454, 150);
+            this.dgvCliente.TabIndex = 34;
+            this.dgvCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
+            // clnIdCliente
+            // 
+            this.clnIdCliente.Frozen = true;
+            this.clnIdCliente.HeaderText = "Id";
+            this.clnIdCliente.Name = "clnIdCliente";
+            this.clnIdCliente.ReadOnly = true;
+            // 
+            // clnCpf
+            // 
+            this.clnCpf.Frozen = true;
+            this.clnCpf.HeaderText = "Cpf";
+            this.clnCpf.Name = "clnCpf";
+            this.clnCpf.ReadOnly = true;
+            // 
+            // clnNomeCliente
+            // 
+            this.clnNomeCliente.Frozen = true;
+            this.clnNomeCliente.HeaderText = "Nome";
+            this.clnNomeCliente.Name = "clnNomeCliente";
+            this.clnNomeCliente.ReadOnly = true;
+            // 
+            // clnEmialCliente
+            // 
+            this.clnEmialCliente.Frozen = true;
+            this.clnEmialCliente.HeaderText = "E-mail";
+            this.clnEmialCliente.Name = "clnEmialCliente";
+            this.clnEmialCliente.ReadOnly = true;
+            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -755,6 +807,7 @@
             this.tpgTelefones.ResumeLayout(false);
             this.tpgTelefones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelefone)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -819,5 +872,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clnUf;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnTiipoEndereco;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnNome;
+        private System.Windows.Forms.DataGridView dgvCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clnIdCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clnCpf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clnNomeCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clnEmialCliente;
     }
 }
