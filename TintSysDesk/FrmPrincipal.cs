@@ -48,10 +48,6 @@ namespace TintSysDesk
 
         private void listarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            FrmCLiente2 frmCLiente2 = new FrmCLiente2();
-            frmCLiente2.MdiParent = this;
-            frmCLiente2.Show();
-
         }
 
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)

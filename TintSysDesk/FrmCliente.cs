@@ -21,34 +21,11 @@ namespace TintSysDesk
         }
         private void FrmCliente_Load(object sender, EventArgs e)
         {
-            CarregaGridCliente();
-
+            CarregarGrid();
         }
-
-        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             InserirCLiente();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Endereco endereco = new Endereco(
-               mskCepCliente.Text,txtLogradouroCliente.Text,
-                txtNumeroCliente.Text,txtComplementoCliente.Text,txtBairroCliente.Text,
-                txtCidadeCliente.Text,txtEstadoCliente.Text,txtUfCliente.Text,cmbTipoEndereco.Text
-                );
-            endereco.Inserir(txtidCliente.TextLength);
-            txtidCliente.Text = endereco.IdCliente.ToString();
         }
         private void InserirCLiente()
         {
@@ -57,53 +34,77 @@ namespace TintSysDesk
                 );
             cliente.Inserir();
             txtidCliente.Text = cliente.Id.ToString();
+            CarregarGrid();
         }
-
-        private void btnInserirTelefone_Click(object sender, EventArgs e)
-        {
-            Telefone telefone = new Telefone(
-                mskNumeroTelefone.Text,cmbTipoTelefone.Text
-                );
-            txtidCliente.Text= telefone.IdCliente.ToString();
-        }
-        public void CarregarEndereco()
-        {
-            List<Endereco> lista = Endereco.ListarPorCliente(Convert.ToInt32(txtidCliente.Text));
-            int linha = 0;
-            dgvEnderecos.Rows.Clear();
-            foreach(Endereco endereco in lista)
-            {
-                dgvEnderecos.Rows.Add();
-                dgvEnderecos.Rows[linha].Cells[0].Value = endereco.Cep;
-                dgvEnderecos.Rows[linha].Cells[1].Value = endereco.Logradouro;
-                dgvEnderecos.Rows[linha].Cells[2].Value = endereco.Numero;
-                dgvEnderecos.Rows[linha].Cells[3].Value = endereco.Complemento;
-                dgvEnderecos.Rows[linha].Cells[4].Value = endereco.Bairro;
-                dgvEnderecos.Rows[linha].Cells[5].Value = endereco.Cidade;
-                dgvEnderecos.Rows[linha].Cells[6].Value = endereco.Estado;
-                dgvEnderecos.Rows[linha].Cells[7].Value = endereco.Uf;
-                dgvEnderecos.Rows[linha].Cells[8].Value = endereco.Tipo;
-                dgvEnderecos.Rows[linha].Cells[0].Value = endereco.IdCliente;
-                linha++;
-            }
-        }
-
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            CarregaGridCliente();
-        }
-        public void CarregaGridCliente()
+        public void CarregarGrid()
         {
             List<Cliente> lista = Cliente.Listar();
             int count = 0;
             dgvCliente.Rows.Clear();
-            foreach (Cliente cliente in lista) 
+            foreach(Cliente cli in lista)
             {
                 dgvCliente.Rows.Add();
-                dgvCliente.Rows[count].Cells[0].Value = cliente.Id.ToString();
-                dgvCliente.Rows[count].Cells[1].Value = cliente.Cpf;
-                dgvCliente.Rows[count].Cells[2].Value = cliente.Nome;
-                dgvCliente.Rows[count].Cells[3].Value = cliente.Email;
+                dgvCliente.Rows[count].Cells[0].Value = cli.Id.ToString();
+                dgvCliente.Rows[count].Cells[1].Value = cli.Nome;
+                dgvCliente.Rows[count].Cells[2].Value = cli.Cpf;
+                dgvCliente.Rows[count].Cells[3].Value = cli.Email;
+                count++;
+
+            }
+        }
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Endereco endereco = new Endereco(
+                mskCepCliente.Text, txtLogradouroCliente.Text, txtNumeroEndereco.Text, txtComplementoCliente.Text,
+               txtBairroCliente.Text, txtCidadeCliente.Text, txtEstadoCliente.Text, txtUfCliente.Text, cmbTipoEndereco.Text,Cliente.ObterPorId(Convert.ToInt32(txtidCliente.Text))
+                );
+            endereco.Inserir(Convert.ToInt32(txtidCliente.TextLength));
+            txtidCliente.Text = endereco.IdCliente.ToString();
+            CarregarEndereco();
+           
+        }
+        public void CarregarEndereco()
+        {
+
+        }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            List<Endereco> lista = Endereco.ListarPorCliente(Convert.ToInt32(txtidCliente.TextLength));
+            int count = 0;
+            dgvEnderecos.Rows.Clear();
+            foreach (Endereco ende in lista)
+            {
+                dgvEnderecos.Rows.Add();
+                dgvEnderecos.Rows[count].Cells[0].Value = ende.Cep;
+                dgvEnderecos.Rows[count].Cells[0].Value = ende.Logradouro;
+                dgvEnderecos.Rows[count].Cells[0].Value = ende.Numero;
+                dgvEnderecos.Rows[count].Cells[0].Value = ende.Complemento;
+                dgvEnderecos.Rows[count].Cells[0].Value = ende.Bairro;
+                dgvEnderecos.Rows[count].Cells[0].Value = ende.Cidade;
+                dgvEnderecos.Rows[count].Cells[0].Value = ende.Estado;
+                dgvEnderecos.Rows[count].Cells[0].Value = ende.Uf;
+                dgvEnderecos.Rows[count].Cells[0].Value = ende.Tipo;
+                dgvEnderecos.Rows[count].Cells[0].Value = ende.IdCliente;
                 count++;
             }
         }

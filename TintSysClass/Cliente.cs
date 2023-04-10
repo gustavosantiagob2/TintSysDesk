@@ -30,8 +30,7 @@ namespace TintSysClass
         public string Email { get => email; set => email = value; }
         public DateTime Datacad { get => datacad; set => datacad = value; }
         public bool Ativo { get => ativo; set => ativo = value; }
-        public List<Endereco> Enderecos { get; set; }
-        public List<Telefone> Telefones { get; set; }
+
 
         //public List<Endereco> Enderecos { get; set; }
         //public List<Telefone> Telefone { get; set; }
@@ -85,16 +84,6 @@ namespace TintSysClass
         /// <param name="email"></param>
         /// <param name="datacad"></param>
         /// <param name="ativo"></param>
-        public Cliente(string nome, string cpf, string email, DateTime datacad, bool ativo, List<Telefone> telefones, List<Endereco> enderecos)
-        { 
-            Nome = nome;
-            Cpf = cpf;
-            Email = email;
-            Datacad = datacad;
-            Ativo = ativo;
-            Telefones = telefones;
-            Enderecos = enderecos;
-        }
         public Cliente(string nome, string cpf, string email, DateTime datacad, bool ativo)
         {
             Nome = nome;
@@ -108,11 +97,6 @@ namespace TintSysClass
             Nome = nome;
             Cpf = cpf;
             Email = email;
-        }
-        public Cliente(int id)
-        {
-            Telefones = Telefone.ListarPorCliente(Id);
-            Enderecos = Endereco.ListarPorCliente(Id);
         }
         //Metodos da classe Cliente
         /// <summary>
@@ -178,21 +162,18 @@ namespace TintSysClass
                     dr.GetString(3),
                     dr.GetDateTime(4),
                     dr.GetBoolean(5)
-                    //Telefone.ObterPorId(dr.GetInt32(6)
-                    //Endereco.ObterPorId(dr.GetInt32(7)
                     ));
             }
             Banco.Fechar(cmd);
             return Lista;
-            
         }
         /// <summary>
         /// Atualiza o campo de Nome, datacad e se o cliente está ativo
         /// </summary>
-        public void Atualizar()
+        public void Atualizar(int id)
         {
             var cmd = Banco.Abir();
-            cmd.CommandText = "update clientes set nome = @nome, datacad = @datacad, ativo = @ativo where id = " +Id;
+            cmd.CommandText = "update clientes set nome = @nome, datacad = @datacad, ativo = @ativo where id = " +id;
             cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = Nome;
             cmd.Parameters.AddWithValue("@datacad",datacad);
             cmd.Parameters.AddWithValue("@ativo", Ativo);

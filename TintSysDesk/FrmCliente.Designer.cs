@@ -30,10 +30,10 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.btnEdiatrCliente = new System.Windows.Forms.Button();
             this.btnConsultarCliente = new System.Windows.Forms.Button();
             this.btnInserirCliente = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label18 = new System.Windows.Forms.Label();
             this.txtidCliente = new System.Windows.Forms.TextBox();
             this.mktCpf = new System.Windows.Forms.MaskedTextBox();
@@ -43,8 +43,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnEditarEndereco = new System.Windows.Forms.Button();
-            this.btnInserirEndereco = new System.Windows.Forms.Button();
             this.dgvEnderecos = new System.Windows.Forms.DataGridView();
             this.clnCep = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnEndereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,7 +58,7 @@
             this.mskCepCliente = new System.Windows.Forms.MaskedTextBox();
             this.btnAdicionarOutrosEnderecos = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtNumeroCliente = new System.Windows.Forms.TextBox();
+            this.txtNumeroEndereco = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -75,42 +73,43 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.tpgTelefones = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvTelefone = new System.Windows.Forms.DataGridView();
-            this.clnTipoDeTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CLLNumeroTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnclientetelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEditarTelefone = new System.Windows.Forms.Button();
             this.btnInserirTelefone = new System.Windows.Forms.Button();
             this.mskNumeroTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.cmbTipoTelefone = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.dgvCliente = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
             this.clnIdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnNomeCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnEmialCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnInserirEndereco = new System.Windows.Forms.Button();
+            this.btnEditarEndereco = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEnderecos)).BeginInit();
-            this.tpgTelefones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelefone)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tpgTelefones);
             this.tabControl1.Location = new System.Drawing.Point(25, 46);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1005, 481);
+            this.tabControl1.Size = new System.Drawing.Size(1005, 701);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -129,18 +128,36 @@
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage1.Size = new System.Drawing.Size(997, 455);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Size = new System.Drawing.Size(997, 675);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dados Básicos";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // dgvCliente
+            // 
+            this.dgvCliente.AllowUserToAddRows = false;
+            this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clnIdCliente,
+            this.clnCpf,
+            this.clnNomeCliente,
+            this.clnEmialCliente});
+            this.dgvCliente.Location = new System.Drawing.Point(13, 276);
+            this.dgvCliente.Name = "dgvCliente";
+            this.dgvCliente.ReadOnly = true;
+            this.dgvCliente.RowHeadersVisible = false;
+            this.dgvCliente.Size = new System.Drawing.Size(499, 150);
+            this.dgvCliente.TabIndex = 34;
+            this.dgvCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // btnEdiatrCliente
             // 
             this.btnEdiatrCliente.Location = new System.Drawing.Point(219, 229);
-            this.btnEdiatrCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEdiatrCliente.Margin = new System.Windows.Forms.Padding(2);
             this.btnEdiatrCliente.Name = "btnEdiatrCliente";
             this.btnEdiatrCliente.Size = new System.Drawing.Size(87, 26);
             this.btnEdiatrCliente.TabIndex = 33;
@@ -150,7 +167,7 @@
             // btnConsultarCliente
             // 
             this.btnConsultarCliente.Location = new System.Drawing.Point(118, 229);
-            this.btnConsultarCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConsultarCliente.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultarCliente.Name = "btnConsultarCliente";
             this.btnConsultarCliente.Size = new System.Drawing.Size(76, 24);
             this.btnConsultarCliente.TabIndex = 32;
@@ -160,7 +177,7 @@
             // btnInserirCliente
             // 
             this.btnInserirCliente.Location = new System.Drawing.Point(22, 228);
-            this.btnInserirCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInserirCliente.Margin = new System.Windows.Forms.Padding(2);
             this.btnInserirCliente.Name = "btnInserirCliente";
             this.btnInserirCliente.Size = new System.Drawing.Size(80, 27);
             this.btnInserirCliente.TabIndex = 31;
@@ -168,17 +185,6 @@
             this.btnInserirCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnInserirCliente.UseVisualStyleBackColor = true;
             this.btnInserirCliente.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::TintSysDesk.Properties.Resources.User;
-            this.pictureBox1.Location = new System.Drawing.Point(406, 16);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(92, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 30;
-            this.pictureBox1.TabStop = false;
             // 
             // label18
             // 
@@ -194,7 +200,7 @@
             // txtidCliente
             // 
             this.txtidCliente.Location = new System.Drawing.Point(162, 49);
-            this.txtidCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtidCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtidCliente.Name = "txtidCliente";
             this.txtidCliente.Size = new System.Drawing.Size(96, 20);
             this.txtidCliente.TabIndex = 29;
@@ -202,7 +208,7 @@
             // mktCpf
             // 
             this.mktCpf.Location = new System.Drawing.Point(14, 49);
-            this.mktCpf.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mktCpf.Margin = new System.Windows.Forms.Padding(2);
             this.mktCpf.Mask = "000.000.000--00";
             this.mktCpf.Name = "mktCpf";
             this.mktCpf.Size = new System.Drawing.Size(89, 20);
@@ -212,7 +218,7 @@
             // txtNomeCliente
             // 
             this.txtNomeCliente.Location = new System.Drawing.Point(13, 110);
-            this.txtNomeCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomeCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomeCliente.Name = "txtNomeCliente";
             this.txtNomeCliente.Size = new System.Drawing.Size(265, 20);
             this.txtNomeCliente.TabIndex = 26;
@@ -220,7 +226,7 @@
             // txtEmailCliente
             // 
             this.txtEmailCliente.Location = new System.Drawing.Point(13, 162);
-            this.txtEmailCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmailCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmailCliente.Name = "txtEmailCliente";
             this.txtEmailCliente.Size = new System.Drawing.Size(265, 20);
             this.txtEmailCliente.TabIndex = 27;
@@ -262,12 +268,20 @@
             // 
             this.tabPage2.Controls.Add(this.btnEditarEndereco);
             this.tabPage2.Controls.Add(this.btnInserirEndereco);
+            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.cmbTipoTelefone);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.dgvTelefone);
+            this.tabPage2.Controls.Add(this.btnEditarTelefone);
+            this.tabPage2.Controls.Add(this.btnInserirTelefone);
+            this.tabPage2.Controls.Add(this.mskNumeroTelefone);
+            this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.dgvEnderecos);
             this.tabPage2.Controls.Add(this.cmbTipoEndereco);
             this.tabPage2.Controls.Add(this.mskCepCliente);
             this.tabPage2.Controls.Add(this.btnAdicionarOutrosEnderecos);
             this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Controls.Add(this.txtNumeroCliente);
+            this.tabPage2.Controls.Add(this.txtNumeroEndereco);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.label10);
@@ -277,40 +291,21 @@
             this.tabPage2.Controls.Add(this.txtBairroCliente);
             this.tabPage2.Controls.Add(this.txtLogradouroCliente);
             this.tabPage2.Controls.Add(this.txtCidadeCliente);
+            this.tabPage2.Controls.Add(this.label15);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage2.Size = new System.Drawing.Size(997, 455);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Size = new System.Drawing.Size(997, 675);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Endereço";
+            this.tabPage2.Text = "Contato";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // btnEditarEndereco
-            // 
-            this.btnEditarEndereco.Location = new System.Drawing.Point(136, 272);
-            this.btnEditarEndereco.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnEditarEndereco.Name = "btnEditarEndereco";
-            this.btnEditarEndereco.Size = new System.Drawing.Size(76, 23);
-            this.btnEditarEndereco.TabIndex = 49;
-            this.btnEditarEndereco.Text = "Editar";
-            this.btnEditarEndereco.UseVisualStyleBackColor = true;
-            // 
-            // btnInserirEndereco
-            // 
-            this.btnInserirEndereco.Location = new System.Drawing.Point(23, 271);
-            this.btnInserirEndereco.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnInserirEndereco.Name = "btnInserirEndereco";
-            this.btnInserirEndereco.Size = new System.Drawing.Size(86, 24);
-            this.btnInserirEndereco.TabIndex = 48;
-            this.btnInserirEndereco.Text = "Inserir";
-            this.btnInserirEndereco.UseVisualStyleBackColor = true;
-            this.btnInserirEndereco.Click += new System.EventHandler(this.button1_Click);
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // dgvEnderecos
             // 
@@ -327,14 +322,14 @@
             this.clnUf,
             this.clnTiipoEndereco,
             this.clnNome});
-            this.dgvEnderecos.Location = new System.Drawing.Point(6, 313);
-            this.dgvEnderecos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvEnderecos.Location = new System.Drawing.Point(8, 278);
+            this.dgvEnderecos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvEnderecos.Name = "dgvEnderecos";
             this.dgvEnderecos.ReadOnly = true;
             this.dgvEnderecos.RowHeadersVisible = false;
             this.dgvEnderecos.RowHeadersWidth = 51;
             this.dgvEnderecos.RowTemplate.Height = 24;
-            this.dgvEnderecos.Size = new System.Drawing.Size(788, 128);
+            this.dgvEnderecos.Size = new System.Drawing.Size(928, 128);
             this.dgvEnderecos.TabIndex = 47;
             this.dgvEnderecos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -432,7 +427,8 @@
             this.cmbTipoEndereco.FormattingEnabled = true;
             this.cmbTipoEndereco.Items.AddRange(new object[] {
             "Comercial",
-            "Residêncial"});
+            "Residêncial",
+            "Entrega"});
             this.cmbTipoEndereco.Location = new System.Drawing.Point(8, 182);
             this.cmbTipoEndereco.Name = "cmbTipoEndereco";
             this.cmbTipoEndereco.Size = new System.Drawing.Size(121, 21);
@@ -441,7 +437,7 @@
             // mskCepCliente
             // 
             this.mskCepCliente.Location = new System.Drawing.Point(4, 76);
-            this.mskCepCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mskCepCliente.Margin = new System.Windows.Forms.Padding(2);
             this.mskCepCliente.Mask = "000.00-000";
             this.mskCepCliente.Name = "mskCepCliente";
             this.mskCepCliente.Size = new System.Drawing.Size(66, 20);
@@ -451,8 +447,8 @@
             // btnAdicionarOutrosEnderecos
             // 
             this.btnAdicionarOutrosEnderecos.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionarOutrosEnderecos.Location = new System.Drawing.Point(144, 172);
-            this.btnAdicionarOutrosEnderecos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdicionarOutrosEnderecos.Location = new System.Drawing.Point(141, 174);
+            this.btnAdicionarOutrosEnderecos.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdicionarOutrosEnderecos.Name = "btnAdicionarOutrosEnderecos";
             this.btnAdicionarOutrosEnderecos.Size = new System.Drawing.Size(196, 29);
             this.btnAdicionarOutrosEnderecos.TabIndex = 44;
@@ -470,13 +466,13 @@
             this.label14.TabIndex = 30;
             this.label14.Text = "TIPO DE ENDEREÇO";
             // 
-            // txtNumeroCliente
+            // txtNumeroEndereco
             // 
-            this.txtNumeroCliente.Location = new System.Drawing.Point(430, 76);
-            this.txtNumeroCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtNumeroCliente.Name = "txtNumeroCliente";
-            this.txtNumeroCliente.Size = new System.Drawing.Size(126, 20);
-            this.txtNumeroCliente.TabIndex = 42;
+            this.txtNumeroEndereco.Location = new System.Drawing.Point(430, 76);
+            this.txtNumeroEndereco.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNumeroEndereco.Name = "txtNumeroEndereco";
+            this.txtNumeroEndereco.Size = new System.Drawing.Size(126, 20);
+            this.txtNumeroEndereco.TabIndex = 42;
             // 
             // label11
             // 
@@ -514,7 +510,7 @@
             // txtComplementoCliente
             // 
             this.txtComplementoCliente.Location = new System.Drawing.Point(570, 76);
-            this.txtComplementoCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtComplementoCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtComplementoCliente.Name = "txtComplementoCliente";
             this.txtComplementoCliente.Size = new System.Drawing.Size(252, 20);
             this.txtComplementoCliente.TabIndex = 41;
@@ -522,7 +518,7 @@
             // txtUfCliente
             // 
             this.txtUfCliente.Location = new System.Drawing.Point(663, 123);
-            this.txtUfCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUfCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtUfCliente.Name = "txtUfCliente";
             this.txtUfCliente.Size = new System.Drawing.Size(159, 20);
             this.txtUfCliente.TabIndex = 39;
@@ -530,7 +526,7 @@
             // txtEstadoCliente
             // 
             this.txtEstadoCliente.Location = new System.Drawing.Point(490, 123);
-            this.txtEstadoCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEstadoCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtEstadoCliente.Name = "txtEstadoCliente";
             this.txtEstadoCliente.Size = new System.Drawing.Size(159, 20);
             this.txtEstadoCliente.TabIndex = 43;
@@ -538,7 +534,7 @@
             // txtBairroCliente
             // 
             this.txtBairroCliente.Location = new System.Drawing.Point(8, 123);
-            this.txtBairroCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBairroCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtBairroCliente.Name = "txtBairroCliente";
             this.txtBairroCliente.Size = new System.Drawing.Size(209, 20);
             this.txtBairroCliente.TabIndex = 38;
@@ -546,7 +542,7 @@
             // txtLogradouroCliente
             // 
             this.txtLogradouroCliente.Location = new System.Drawing.Point(122, 76);
-            this.txtLogradouroCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLogradouroCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtLogradouroCliente.Name = "txtLogradouroCliente";
             this.txtLogradouroCliente.Size = new System.Drawing.Size(294, 20);
             this.txtLogradouroCliente.TabIndex = 37;
@@ -554,7 +550,7 @@
             // txtCidadeCliente
             // 
             this.txtCidadeCliente.Location = new System.Drawing.Point(224, 123);
-            this.txtCidadeCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCidadeCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtCidadeCliente.Name = "txtCidadeCliente";
             this.txtCidadeCliente.Size = new System.Drawing.Size(252, 20);
             this.txtCidadeCliente.TabIndex = 36;
@@ -614,99 +610,105 @@
             this.label5.TabIndex = 26;
             this.label5.Text = "CEP : ";
             // 
-            // tpgTelefones
+            // pictureBox1
             // 
-            this.tpgTelefones.Controls.Add(this.dgvTelefone);
-            this.tpgTelefones.Controls.Add(this.btnEditarTelefone);
-            this.tpgTelefones.Controls.Add(this.btnInserirTelefone);
-            this.tpgTelefones.Controls.Add(this.mskNumeroTelefone);
-            this.tpgTelefones.Controls.Add(this.cmbTipoTelefone);
-            this.tpgTelefones.Controls.Add(this.label17);
-            this.tpgTelefones.Controls.Add(this.label16);
-            this.tpgTelefones.Location = new System.Drawing.Point(4, 22);
-            this.tpgTelefones.Name = "tpgTelefones";
-            this.tpgTelefones.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tpgTelefones.Size = new System.Drawing.Size(997, 455);
-            this.tpgTelefones.TabIndex = 3;
-            this.tpgTelefones.Text = "Telefone";
-            this.tpgTelefones.UseVisualStyleBackColor = true;
+            this.pictureBox1.Image = global::TintSysDesk.Properties.Resources.User;
+            this.pictureBox1.Location = new System.Drawing.Point(406, 16);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(92, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 30;
+            this.pictureBox1.TabStop = false;
             // 
             // dgvTelefone
             // 
             this.dgvTelefone.AllowUserToAddRows = false;
             this.dgvTelefone.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTelefone.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clnTipoDeTelefone,
-            this.CLLNumeroTelefone,
-            this.clnclientetelefone});
-            this.dgvTelefone.Location = new System.Drawing.Point(20, 254);
-            this.dgvTelefone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.dgvTelefone.Location = new System.Drawing.Point(13, 489);
+            this.dgvTelefone.Margin = new System.Windows.Forms.Padding(2);
             this.dgvTelefone.Name = "dgvTelefone";
             this.dgvTelefone.ReadOnly = true;
             this.dgvTelefone.RowHeadersVisible = false;
             this.dgvTelefone.RowHeadersWidth = 51;
             this.dgvTelefone.RowTemplate.Height = 24;
             this.dgvTelefone.Size = new System.Drawing.Size(403, 93);
-            this.dgvTelefone.TabIndex = 50;
+            this.dgvTelefone.TabIndex = 56;
             // 
-            // clnTipoDeTelefone
+            // dataGridViewTextBoxColumn1
             // 
-            this.clnTipoDeTelefone.Frozen = true;
-            this.clnTipoDeTelefone.HeaderText = "Tipo";
-            this.clnTipoDeTelefone.MinimumWidth = 6;
-            this.clnTipoDeTelefone.Name = "clnTipoDeTelefone";
-            this.clnTipoDeTelefone.ReadOnly = true;
-            this.clnTipoDeTelefone.Width = 133;
+            this.dataGridViewTextBoxColumn1.Frozen = true;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Tipo";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 133;
             // 
-            // CLLNumeroTelefone
+            // dataGridViewTextBoxColumn2
             // 
-            this.CLLNumeroTelefone.Frozen = true;
-            this.CLLNumeroTelefone.HeaderText = "Número";
-            this.CLLNumeroTelefone.MinimumWidth = 6;
-            this.CLLNumeroTelefone.Name = "CLLNumeroTelefone";
-            this.CLLNumeroTelefone.ReadOnly = true;
-            this.CLLNumeroTelefone.Width = 133;
+            this.dataGridViewTextBoxColumn2.Frozen = true;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Número";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 133;
             // 
-            // clnclientetelefone
+            // dataGridViewTextBoxColumn3
             // 
-            this.clnclientetelefone.Frozen = true;
-            this.clnclientetelefone.HeaderText = "Cliente";
-            this.clnclientetelefone.MinimumWidth = 6;
-            this.clnclientetelefone.Name = "clnclientetelefone";
-            this.clnclientetelefone.ReadOnly = true;
-            this.clnclientetelefone.Width = 133;
+            this.dataGridViewTextBoxColumn3.Frozen = true;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Cliente";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 133;
             // 
             // btnEditarTelefone
             // 
-            this.btnEditarTelefone.Location = new System.Drawing.Point(98, 188);
-            this.btnEditarTelefone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditarTelefone.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarTelefone.Location = new System.Drawing.Point(99, 602);
+            this.btnEditarTelefone.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditarTelefone.Name = "btnEditarTelefone";
-            this.btnEditarTelefone.Size = new System.Drawing.Size(74, 20);
-            this.btnEditarTelefone.TabIndex = 49;
+            this.btnEditarTelefone.Size = new System.Drawing.Size(74, 28);
+            this.btnEditarTelefone.TabIndex = 55;
             this.btnEditarTelefone.Text = "Editar";
             this.btnEditarTelefone.UseVisualStyleBackColor = true;
             // 
             // btnInserirTelefone
             // 
-            this.btnInserirTelefone.Location = new System.Drawing.Point(20, 188);
-            this.btnInserirTelefone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInserirTelefone.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInserirTelefone.Location = new System.Drawing.Point(21, 602);
+            this.btnInserirTelefone.Margin = new System.Windows.Forms.Padding(2);
             this.btnInserirTelefone.Name = "btnInserirTelefone";
-            this.btnInserirTelefone.Size = new System.Drawing.Size(74, 20);
-            this.btnInserirTelefone.TabIndex = 47;
+            this.btnInserirTelefone.Size = new System.Drawing.Size(74, 28);
+            this.btnInserirTelefone.TabIndex = 54;
             this.btnInserirTelefone.Text = "Inserir";
             this.btnInserirTelefone.UseVisualStyleBackColor = true;
-            this.btnInserirTelefone.Click += new System.EventHandler(this.btnInserirTelefone_Click);
+            this.btnInserirTelefone.Click += new System.EventHandler(this.button2_Click);
             // 
             // mskNumeroTelefone
             // 
-            this.mskNumeroTelefone.Location = new System.Drawing.Point(20, 135);
-            this.mskNumeroTelefone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mskNumeroTelefone.Location = new System.Drawing.Point(22, 452);
+            this.mskNumeroTelefone.Margin = new System.Windows.Forms.Padding(2);
             this.mskNumeroTelefone.Mask = "(00) 00000-0000";
             this.mskNumeroTelefone.Name = "mskNumeroTelefone";
             this.mskNumeroTelefone.Size = new System.Drawing.Size(113, 20);
-            this.mskNumeroTelefone.TabIndex = 46;
+            this.mskNumeroTelefone.TabIndex = 53;
             this.mskNumeroTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.mskNumeroTelefone.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(28, 433);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 17);
+            this.label4.TabIndex = 51;
+            this.label4.Text = "NÚMERO : ";
             // 
             // cmbTipoTelefone
             // 
@@ -714,50 +716,22 @@
             this.cmbTipoTelefone.Items.AddRange(new object[] {
             "Residência",
             "Comercial"});
-            this.cmbTipoTelefone.Location = new System.Drawing.Point(20, 64);
-            this.cmbTipoTelefone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbTipoTelefone.Location = new System.Drawing.Point(176, 451);
+            this.cmbTipoTelefone.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTipoTelefone.Name = "cmbTipoTelefone";
             this.cmbTipoTelefone.Size = new System.Drawing.Size(113, 21);
-            this.cmbTipoTelefone.TabIndex = 5;
+            this.cmbTipoTelefone.TabIndex = 58;
             // 
-            // label17
+            // label6
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(16, 46);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(33, 17);
-            this.label17.TabIndex = 3;
-            this.label17.Text = "TIPO :";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(16, 107);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(53, 17);
-            this.label16.TabIndex = 4;
-            this.label16.Text = "NÚMERO : ";
-            // 
-            // dgvCliente
-            // 
-            this.dgvCliente.AllowUserToAddRows = false;
-            this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clnIdCliente,
-            this.clnCpf,
-            this.clnNomeCliente,
-            this.clnEmialCliente});
-            this.dgvCliente.Location = new System.Drawing.Point(13, 277);
-            this.dgvCliente.Name = "dgvCliente";
-            this.dgvCliente.ReadOnly = true;
-            this.dgvCliente.RowHeadersVisible = false;
-            this.dgvCliente.Size = new System.Drawing.Size(454, 150);
-            this.dgvCliente.TabIndex = 34;
-            this.dgvCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(172, 433);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(33, 17);
+            this.label6.TabIndex = 57;
+            this.label6.Text = "TIPO :";
             // 
             // clnIdCliente
             // 
@@ -786,28 +760,66 @@
             this.clnEmialCliente.HeaderText = "E-mail";
             this.clnEmialCliente.Name = "clnEmialCliente";
             this.clnEmialCliente.ReadOnly = true;
+            this.clnEmialCliente.Width = 195;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(378, 160);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(28, 19);
+            this.label15.TabIndex = 31;
+            this.label15.Text = "ID  :";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(376, 182);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 59;
+            // 
+            // btnInserirEndereco
+            // 
+            this.btnInserirEndereco.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInserirEndereco.Location = new System.Drawing.Point(13, 229);
+            this.btnInserirEndereco.Name = "btnInserirEndereco";
+            this.btnInserirEndereco.Size = new System.Drawing.Size(75, 28);
+            this.btnInserirEndereco.TabIndex = 60;
+            this.btnInserirEndereco.Text = "Inserir";
+            this.btnInserirEndereco.UseVisualStyleBackColor = true;
+            this.btnInserirEndereco.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // btnEditarEndereco
+            // 
+            this.btnEditarEndereco.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarEndereco.Location = new System.Drawing.Point(99, 229);
+            this.btnEditarEndereco.Name = "btnEditarEndereco";
+            this.btnEditarEndereco.Size = new System.Drawing.Size(75, 28);
+            this.btnEditarEndereco.TabIndex = 60;
+            this.btnEditarEndereco.Text = "Editar";
+            this.btnEditarEndereco.UseVisualStyleBackColor = true;
             // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1363, 566);
+            this.ClientSize = new System.Drawing.Size(1363, 801);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmCliente";
             this.Text = "FrmCliente";
             this.Load += new System.EventHandler(this.FrmCliente_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEnderecos)).EndInit();
-            this.tpgTelefones.ResumeLayout(false);
-            this.tpgTelefones.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelefone)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -817,15 +829,11 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tpgTelefones;
-        private System.Windows.Forms.ComboBox cmbTipoTelefone;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox cmbTipoEndereco;
         private System.Windows.Forms.MaskedTextBox mskCepCliente;
         private System.Windows.Forms.Button btnAdicionarOutrosEnderecos;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtNumeroCliente;
+        private System.Windows.Forms.TextBox txtNumeroEndereco;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
@@ -849,19 +857,10 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtidCliente;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.MaskedTextBox mskNumeroTelefone;
-        private System.Windows.Forms.Button btnEditarEndereco;
-        private System.Windows.Forms.Button btnInserirEndereco;
         private System.Windows.Forms.DataGridView dgvEnderecos;
         private System.Windows.Forms.Button btnEdiatrCliente;
         private System.Windows.Forms.Button btnConsultarCliente;
         private System.Windows.Forms.Button btnInserirCliente;
-        private System.Windows.Forms.Button btnInserirTelefone;
-        private System.Windows.Forms.DataGridView dgvTelefone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clnTipoDeTelefone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CLLNumeroTelefone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clnclientetelefone;
-        private System.Windows.Forms.Button btnEditarTelefone;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnCep;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnEndereco;
         private System.Windows.Forms.DataGridViewTextBoxColumn cluNumero;
@@ -873,9 +872,23 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clnTiipoEndereco;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnNome;
         private System.Windows.Forms.DataGridView dgvCliente;
+        private System.Windows.Forms.ComboBox cmbTipoTelefone;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridView dgvTelefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.Button btnEditarTelefone;
+        private System.Windows.Forms.Button btnInserirTelefone;
+        private System.Windows.Forms.MaskedTextBox mskNumeroTelefone;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnIdCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnCpf;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnNomeCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn clnEmialCliente;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btnEditarEndereco;
+        private System.Windows.Forms.Button btnInserirEndereco;
     }
 }

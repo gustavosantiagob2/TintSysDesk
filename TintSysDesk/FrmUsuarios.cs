@@ -61,7 +61,6 @@ namespace TintSysDesk
         }
         public void CarregaGridNiveis()
         {
-
             List<Nivel> lista = Nivel.Listar();
             int linha = 0;
             dgvNiveis.Rows.Clear();
