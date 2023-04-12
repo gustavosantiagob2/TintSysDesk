@@ -35,7 +35,6 @@ namespace TintSysClass
         public string Tipo { get => tipo; set => tipo = value; }
         public Cliente IdCliente { get => idCliente; set => idCliente = value; }
 
-
         //Metodos construtores 
         public Endereco() { }
         public Endereco(Cliente idCliente) 

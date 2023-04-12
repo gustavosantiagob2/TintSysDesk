@@ -15,21 +15,16 @@ namespace TintSysClass
     public class Cliente
     {
         // Atributos da classe
-        private int id;
-        private string nome;
-        private string cpf;
-        private string email;
-        private DateTime datacad;
-        private bool ativo;
-
+        public int Id {get; set;}
+        public string Nome { get; set;}
+        public string Cpf { get; set;}
+        public string Email { get; set;}
+        public DateTime Datacad { get; set;}
+        public Boolean Ativo { get; set;}
+     
 
         //Propriedades  (Encapsulamento)
-        public int Id { get => id; set => id = value; }
-        public string Nome { get => nome; set => nome = value; }
-        public string Cpf { get => cpf; set => cpf = value; }
-        public string Email { get => email; set => email = value; }
-        public DateTime Datacad { get => datacad; set => datacad = value; }
-        public bool Ativo { get => ativo; set => ativo = value; }
+
 
 
         //public List<Endereco> Enderecos { get; set; }
@@ -109,7 +104,7 @@ namespace TintSysClass
                 "values (@nome, @cpf, @email, default, default) ";
             comando.Parameters.AddWithValue("@nome", Nome);
             comando.Parameters.AddWithValue("@cpf", Cpf);
-            comando.Parameters.AddWithValue("@email", email);
+            comando.Parameters.AddWithValue("@email", Email);
             comando.ExecuteNonQuery();
             comando.CommandText = "select @@identity";
             Id = Convert.ToInt32(comando.ExecuteScalar());
@@ -175,7 +170,7 @@ namespace TintSysClass
             var cmd = Banco.Abir();
             cmd.CommandText = "update clientes set nome = @nome, datacad = @datacad, ativo = @ativo where id = " +id;
             cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = Nome;
-            cmd.Parameters.AddWithValue("@datacad",datacad);
+            cmd.Parameters.AddWithValue("@datacad",Datacad);
             cmd.Parameters.AddWithValue("@ativo", Ativo);
             cmd.ExecuteNonQuery();
             Banco.Fechar(cmd);

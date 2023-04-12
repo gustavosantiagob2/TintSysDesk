@@ -79,7 +79,7 @@ namespace TintSysDesk
                txtBairroCliente.Text, txtCidadeCliente.Text, txtEstadoCliente.Text, txtUfCliente.Text, cmbTipoEndereco.Text,Cliente.ObterPorId(Convert.ToInt32(txtidCliente.Text))
                 );
             endereco.Inserir(Convert.ToInt32(txtidCliente.TextLength));
-            txtidCliente.Text = endereco.IdCliente.ToString();
+            txtidCliente.Text = endereco.Cliente.ToString();
             CarregarEndereco();
            
         }
@@ -104,7 +104,7 @@ namespace TintSysDesk
                 dgvEnderecos.Rows[count].Cells[0].Value = ende.Estado;
                 dgvEnderecos.Rows[count].Cells[0].Value = ende.Uf;
                 dgvEnderecos.Rows[count].Cells[0].Value = ende.Tipo;
-                dgvEnderecos.Rows[count].Cells[0].Value = ende.IdCliente;
+                dgvEnderecos.Rows[count].Cells[0].Value = ende.Cliente;
                 count++;
             }
         }
