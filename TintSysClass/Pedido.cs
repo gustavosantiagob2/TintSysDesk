@@ -52,11 +52,11 @@ namespace TintSysClass
             IdUsuario = idUsuario;
             Arquivado = arquivado;
         }
-        public void Inserir ( int idCLiente, int idUsuario)
+        public void Inserir ( int idCliente, int idUsuario)
         {
             var cmd = Banco.Abir();
             cmd.CommandText = "insert pedidos (data, status, desconto, cliente_id, usuario_id,arquivado,hashcode)" +
-                "value (@data, @status, @desconto"+idCLiente+","+idUsuario+",@arquivado, @hashcode) ";
+                "value (@data, @status, @desconto"+idCliente+","+idUsuario+",@arquivado, @hashcode) ";
             cmd.Parameters.Add("@data", MySqlDbType.DateTime).Value = Data;
             cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = Status;
             cmd.Parameters.Add("@desconto", MySqlDbType.Double).Value = Desconto;
@@ -66,6 +66,40 @@ namespace TintSysClass
             cmd.Parameters.Add("@hashcode", MySqlDbType.VarChar).Value = Hashcode;
             cmd.ExecuteNonQuery();
             cmd.CommandText = "select @@identity";
+            Id = Convert.ToInt32(cmd.ExecuteScalar());
+            Banco.Fechar(cmd);
+        }
+        public static List<Pedido> ListarPorId(int Id )
+        {
+            List<Pedido> lista = new List<Pedido>();
+            var cmd = Banco.Abir();
+            cmd.CommandText = "select * from pedidos where id ="+Id;
+            var dr = cmd.ExecuteReader();
+            while (dr.Read()) 
+            {
+                lista.Add(new Pedido(
+                    dr.GetInt32(0),
+                    dr.GetDateTime(1),
+                    dr.GetString(2),
+                    dr.GetDouble(3),
+                    Cliente.ObterPorId(dr.GetInt32(4)),
+                    Usuario.ObterPorId(dr.GetInt32(5)),
+                    dr.GetDateTime(6),
+                    dr.GetString(7)));
+            }
+            Banco.Fechar(cmd);
+            return lista;
+        }
+        public void Atualizar ()
+        {
+            var cmd = Banco.Abir();
+            cmd.CommandText = "update pedidos set data = @data, status = @status, desconto = @desconto,arquivado = @arquivado ,hashcode = @hashcode";
+            cmd.Parameters.Add("@data", MySqlDbType.DateTime).Value = Data;
+            cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = Status;
+            cmd.Parameters.Add("@desconto", MySqlDbType.Double).Value = Desconto;
+            cmd.Parameters.Add("@arquivo", MySqlDbType.Date).Value = Arquivado;
+            cmd.Parameters.Add("@hashcode", MySqlDbType.VarChar).Value = Hashcode;
+            cmd.ExecuteNonQuery();
             Id = Convert.ToInt32(cmd.ExecuteScalar());
             Banco.Fechar(cmd);
         }
