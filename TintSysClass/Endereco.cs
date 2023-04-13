@@ -10,38 +10,21 @@ namespace TintSysClass
     public class Endereco
     {
         //Atributos da classe
-        private int id;
-        private string cep;
-        private string logradouro;
-        private string numero;
-        private string complemento;
-        private string bairro;
-        private string cidade;
-        private string estado;
-        private string uf;
-        private string tipo;
-        private Cliente idCliente;
-
-        //Propriedades da classe
-        public int Id { get => id; set => id = value; }
-        public string Cep { get => cep; set => cep = value; }
-        public string Logradouro { get => logradouro; set => logradouro = value; }
-        public string Numero { get => numero; set => numero = value; }
-        public string Complemento { get => complemento; set => complemento = value; }
-        public string Bairro { get => bairro; set => bairro = value; }
-        public string Cidade { get => cidade; set => cidade = value; }
-        public string Estado { get => estado; set => estado = value; }
-        public string Uf { get => uf; set => uf = value; }
-        public string Tipo { get => tipo; set => tipo = value; }
-        public Cliente IdCliente { get => idCliente; set => idCliente = value; }
-
+        public int Id { get; set; }
+        public string Cep { get; set; }
+        public string Logradouro { get; set; }
+        public string Numero { get; set; }
+        public string Complemento { get; set; }
+        public string Bairro { get; set; }
+        public string Cidade { get; set; }
+        public string Estado { get; set; }
+        public string Uf { get; set; }
+        public string Tipo { get; set; }
+        public Cliente Cliente { get; set; }
         //Metodos construtores 
         public Endereco() { }
-        public Endereco(Cliente idCliente) 
-        {
-            IdCliente = idCliente;
-        }
-        public Endereco(int id, string cep, string logradouro, string numero, string complemento, string bairro, string cidade, string estado, string uf, string tipo, Cliente idCliente)
+
+        public Endereco(int id, string cep, string logradouro, string numero, string complemento, string bairro, string cidade, string estado, string uf, string tipo, Cliente cliente)
         {
             Id = id;
             Cep = cep;
@@ -53,9 +36,10 @@ namespace TintSysClass
             Estado = estado;
             Uf = uf;
             Tipo = tipo;
-            IdCliente = idCliente;
+            Cliente = cliente;
         }
-        public Endereco(string cep, string logradouro, string numero, string complemento, string bairro, string cidade, string estado, string uf, string tipo, Cliente idCliente)
+
+        public Endereco(string cep, string logradouro, string numero, string complemento, string bairro, string cidade, string estado, string uf, string tipo, Cliente cliente)
         {
             Cep = cep;
             Logradouro = logradouro;
@@ -66,26 +50,16 @@ namespace TintSysClass
             Estado = estado;
             Uf = uf;
             Tipo = tipo;
-            IdCliente = idCliente;
+            Cliente = cliente;
         }
-        public Endereco( string cep, string logradouro, string numero, string complemento, string bairro, string cidade, string estado, string uf, string tipo)
-        {
-            Cep = cep;
-            Logradouro = logradouro;
-            Numero = numero;
-            Complemento = complemento;
-            Bairro = bairro;
-            Cidade = cidade;
-            Estado = estado;
-            Uf = uf;
-            Tipo = tipo;
-        }
+
+
         //Metodos da classe
-        public void Inserir(int Cliente_id)
+        public void Inserir(int Cliente)
         {
             var cmd = Banco.Abir();
             cmd.CommandText = "insert enderecos ( cep, logradouro, numero, complemento, bairro, cidade, estado, uf, tipo, cliente_id)" +
-                " values (@cep, @logradouro, @numero, @complemento, @bairro, @cidade, @estado, @uf, @tipo,"+Cliente_id+")";
+                " values (@cep, @logradouro, @numero, @complemento, @bairro, @cidade, @estado, @uf, @tipo,"+Cliente+")";
             cmd.Parameters.AddWithValue("@cep", Cep);
             cmd.Parameters.AddWithValue("@logradouro", Logradouro);
             cmd.Parameters.AddWithValue("@numero",Numero);
@@ -95,9 +69,9 @@ namespace TintSysClass
             cmd.Parameters.AddWithValue("@estado", Estado);
             cmd.Parameters.AddWithValue("@uf", Uf);
             cmd.Parameters.AddWithValue("@tipo", Tipo);
-            cmd.Parameters.Add("@cliente_id", MySqlDbType.Int32).Value = Cliente_id;
+            cmd.Parameters.Add("@cliente_id", MySqlDbType.Int32).Value =Cliente;
             cmd.ExecuteNonQuery();
-            cmd.CommandText = "select @@indentity";
+            cmd.CommandText = "select @@identity";
             Id = Convert.ToInt32(cmd.ExecuteScalar());
             Banco.Fechar(cmd);
         }
@@ -149,10 +123,10 @@ namespace TintSysClass
             Banco.Fechar(cmd);
             return Lista;
         }
-        public void Atualizar()
+        public void Atualizar(int id)
         {
             var cmd = Banco.Abir();
-            cmd.CommandText = "update enderecos set cep = @cep, logradouro = @logradouro, numero = @numero, complemento = @complemento, bairro = @bairro, cidade = @cidade, estado = @estado,uf = @uf, tipo = @tipo where id ="+Id;
+            cmd.CommandText = "update enderecos set cep = @cep, logradouro = @logradouro, numero = @numero, complemento = @complemento, bairro = @bairro, cidade = @cidade, estado = @estado,uf = @uf, tipo = @tipo where id ="+id;
             cmd.Parameters.AddWithValue("@cep", Cep);
             cmd.Parameters.AddWithValue("@logradouro", Logradouro);
             cmd.Parameters.AddWithValue("@numero", Numero);

@@ -10,26 +10,20 @@ namespace TintSysClass
     public class Telefone
     {
         // Atributos da classe
-        private int id;
-        private string numero;
-        private string tipo;
-        private Cliente idCliente;
-
-        //Propriedades (encapsulamento) 
-        public int Id { get => id; set => id = value; }
-        public string Numero { get => numero; set => numero = value; }
-        public string Tipo { get => tipo; set => tipo = value; }
-        public Cliente IdCliente { get => idCliente; set => idCliente = value; }
-
+ 
+        public int Id { get; set; }
+        public string Numero { get; set; }
+        public string Tipo { get; set; }
+        public Cliente Cliente { get; set; }
 
         //Metodos construtores
         public Telefone() { }
-        public Telefone(int id, string numero, string tipo, Cliente idCliente)
+        public Telefone(int id, string numero, string tipo, Cliente cliente)
         {
             Id = id;
             Numero = numero;
             Tipo = tipo;
-            IdCliente = idCliente;
+            Cliente = cliente;
         }
         public Telefone(int id, string numero, string tipo)
         {
@@ -76,7 +70,7 @@ namespace TintSysClass
         /// <summary>
         /// Atualiza o campo de Numero e do Tipo
         /// </summary>
-        public void Atualizar()
+        public void Atualizar(int id)
         {
             var cmd = Banco.Abir();
             cmd.CommandText = "update telefones set numero = @numero, tipo = @tipo where id ="+Id;

@@ -75,11 +75,11 @@ namespace TintSysDesk
         private void button3_Click_1(object sender, EventArgs e)
         {
             Endereco endereco = new Endereco(
-                mskCepCliente.Text, txtLogradouroCliente.Text, txtNumeroEndereco.Text, txtComplementoCliente.Text,
-               txtBairroCliente.Text, txtCidadeCliente.Text, txtEstadoCliente.Text, txtUfCliente.Text, cmbTipoEndereco.Text,Cliente.ObterPorId(Convert.ToInt32(txtidCliente.Text))
-                );
+               mskCepCliente.Text, txtLogradouroCliente.Text, txtNumeroEndereco.Text,
+                txtComplementoCliente.Text, txtBairroCliente.Text, txtCidadeCliente.Text,
+                txtEstadoCliente.Text, txtUfCliente.Text,
+                cmbTipoEndereco.Text, Cliente.ObterPorId(Convert.ToInt32((txtidCliente.Text))));
             endereco.Inserir(Convert.ToInt32(txtidCliente.TextLength));
-            txtidCliente.Text = endereco.Cliente.ToString();
             CarregarEndereco();
            
         }
