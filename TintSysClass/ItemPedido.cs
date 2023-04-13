@@ -51,7 +51,9 @@ namespace TintSysClass
         {
             ItemPedido iten = new ItemPedido();
             var cmd = Banco.Abir();
-            cmd.CommandText = "select * from itempedido where pedido_id ="+pedido;
+            cmd.CommandText = "select * from itempedido where pedido_id =@pedido and produdo_id = @produto";
+            cmd.Parameters.AddWithValue("@pedido", pedido);
+            cmd.Parameters.AddWithValue("@produto",produto);
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -64,5 +66,53 @@ namespace TintSysClass
             Banco.Fechar(cmd);
             return iten;
         }
+        public static List<ItemPedido> ListarPorPedido(int pedido)
+        {
+            ItemPedido item = null;
+            List<ItemPedido> itens = new List<ItemPedido>();
+            var cmd = Banco.Abir();
+            cmd.CommandText = "select * from itempedido where pedido_id =@pedido";
+            cmd.Parameters.AddWithValue("@pedido", pedido);
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                item = new ItemPedido();
+                item.Id = dr.GetInt32(0);
+                item.Produto = Produto.ObterPorId(dr.GetInt32(2));
+                item.Preco = dr.GetDouble(3);
+                item.Quantidade = dr.GetDouble(4);
+                item.Desconto = dr.GetDouble(5);
+                itens.Add(item);
+            }
+            Banco.Fechar(cmd);
+            return itens;
+        }
+        public void Alterar(int pedido_id)
+        {
+            var cmd = Banco.Abir();
+            cmd.CommandText = "update itempedido set quantidade = @quantidade, desconto = @desconto where pedido_id= @pedido_id and produto_id = @produto_id";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@peido_id", pedido_id);
+            cmd.Parameters.AddWithValue("@produto_id", Produto.Id);
+            cmd.Parameters.AddWithValue("@quantidade", Quantidade);
+            cmd.Parameters.AddWithValue("@desconto", Desconto);
+            cmd.ExecuteNonQuery();
+            cmd.CommandText = "select @@identity";
+            Id = Convert.ToInt32(cmd.ExecuteScalar());
+            Banco.Fechar(cmd);
+        }
+        public void Excluir(int pedido_id, int produto_id)
+        {
+            var cmd = Banco.Abir();
+            cmd.CommandText = "delete itempedido where pedido_id= @pedido_id and produto_id = @produto_id";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@peido_id", pedido_id);
+            cmd.Parameters.AddWithValue("@produto_id",produto_id);
+            cmd.ExecuteNonQuery();
+            cmd.CommandText = "select @@identity";
+            Id = Convert.ToInt32(cmd.ExecuteScalar());
+            Banco.Fechar(cmd);
+        }
+
     }
 }

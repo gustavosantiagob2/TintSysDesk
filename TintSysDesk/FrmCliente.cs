@@ -69,7 +69,7 @@ namespace TintSysDesk
             Telefone telefone = new Telefone(
                 mskNumeroTelefone.Text,cmbTipoTelefone.Text
                 );
-            telefone.Inserir(Convert.ToInt32(txtidCliente.TextLength));
+            telefone.Inserir(Convert.ToInt32(txtidCliente.Text));
             CarregaTelefone();
 
         }
@@ -86,7 +86,7 @@ namespace TintSysDesk
                 txtComplementoCliente.Text, txtBairroCliente.Text, txtCidadeCliente.Text,
                 txtEstadoCliente.Text, txtUfCliente.Text,
                 cmbTipoEndereco.Text, Cliente.ObterPorId(Convert.ToInt32((txtidCliente.Text))));
-            endereco.Inserir(Convert.ToInt32(txtidCliente.TextLength));
+            endereco.Inserir(Convert.ToInt32(txtidCliente.Text));
             CarregarEndereco();
            
         }
