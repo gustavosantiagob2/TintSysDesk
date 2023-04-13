@@ -79,7 +79,7 @@ namespace TintSysClass
         {
             Endereco endereco = null;
             var cmd = Banco.Abir();
-            cmd.CommandText = "select * from endereco where id =" + id;
+            cmd.CommandText = "select * from enderecos where id =" + id;
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {

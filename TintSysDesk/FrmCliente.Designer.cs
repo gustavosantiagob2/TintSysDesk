@@ -50,7 +50,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnEditarEndereco = new System.Windows.Forms.Button();
             this.btnInserirEndereco = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtIdConsulta = new System.Windows.Forms.TextBox();
             this.cmbTipoTelefone = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dgvTelefone = new System.Windows.Forms.DataGridView();
@@ -314,7 +314,7 @@
             this.tabPage2.BackColor = System.Drawing.Color.Silver;
             this.tabPage2.Controls.Add(this.btnEditarEndereco);
             this.tabPage2.Controls.Add(this.btnInserirEndereco);
-            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.txtIdConsulta);
             this.tabPage2.Controls.Add(this.cmbTipoTelefone);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.dgvTelefone);
@@ -359,8 +359,9 @@
             this.btnEditarEndereco.Name = "btnEditarEndereco";
             this.btnEditarEndereco.Size = new System.Drawing.Size(100, 34);
             this.btnEditarEndereco.TabIndex = 60;
-            this.btnEditarEndereco.Text = "Editar";
+            this.btnEditarEndereco.Text = "...";
             this.btnEditarEndereco.UseVisualStyleBackColor = true;
+            this.btnEditarEndereco.Click += new System.EventHandler(this.btnEditarEndereco_Click);
             // 
             // btnInserirEndereco
             // 
@@ -374,13 +375,13 @@
             this.btnInserirEndereco.UseVisualStyleBackColor = true;
             this.btnInserirEndereco.Click += new System.EventHandler(this.button3_Click_1);
             // 
-            // textBox1
+            // txtIdConsulta
             // 
-            this.textBox1.Location = new System.Drawing.Point(184, 224);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 22);
-            this.textBox1.TabIndex = 59;
+            this.txtIdConsulta.Location = new System.Drawing.Point(184, 224);
+            this.txtIdConsulta.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIdConsulta.Name = "txtIdConsulta";
+            this.txtIdConsulta.Size = new System.Drawing.Size(132, 22);
+            this.txtIdConsulta.TabIndex = 59;
             // 
             // cmbTipoTelefone
             // 
@@ -859,7 +860,7 @@
         private System.Windows.Forms.Button btnInserirTelefone;
         private System.Windows.Forms.MaskedTextBox mskNumeroTelefone;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtIdConsulta;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnEditarEndereco;
         private System.Windows.Forms.Button btnInserirEndereco;

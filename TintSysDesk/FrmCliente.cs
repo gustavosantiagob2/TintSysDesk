@@ -156,5 +156,28 @@ namespace TintSysDesk
         {
 
         }
+
+        private void btnEditarEndereco_Click(object sender, EventArgs e)
+        {
+            if (btnEditarEndereco.Text == "...")
+            {
+                txtIdConsulta.ReadOnly = true;
+                btnEditarEndereco.Text = "...";
+                var endereco = Endereco.ObterPorId(int.Parse(txtIdConsulta.Text));
+                if (endereco.Id >0)
+                {
+                    mskCepCliente.Text = endereco.Cep;
+                    txtLogradouroCliente.Text = endereco.Logradouro;
+                    txtNumeroEndereco.Text = endereco.Numero;
+                    txtComplementoCliente.Text = endereco.Complemento;
+                    txtBairroCliente.Text = endereco.Bairro;
+                    txtCidadeCliente.Text = endereco.Cidade;
+                    txtEstadoCliente.Text = endereco.Estado;
+                    txtUfCliente.Text = endereco.Uf;
+                    cmbTipoEndereco.Text = endereco.Tipo;
+                    btnConsultarCliente.Enabled = true;
+                }
+            }
+        }
     }
 }
