@@ -99,11 +99,35 @@ namespace TintSysClass
             Banco.Fechar(cmd);
             return endereco;
         }
-        public static List<Endereco> ListarPorCliente (int cliente_id )
+        public static List<Endereco> Listar()
         {
             var cmd = Banco.Abir();
             List<Endereco> Lista = new List<Endereco>();
             cmd.CommandText = "select * from enderecos";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Lista.Add(new Endereco(
+                      dr.GetInt32(0),
+                      dr.GetString(1),
+                      dr.GetString(2),
+                      dr.GetString(3),
+                      dr.GetString(4),
+                      dr.GetString(5),
+                      dr.GetString(6),
+                      dr.GetString(7),
+                      dr.GetString(8),
+                      dr.GetString(9),
+                      Cliente.ObterPorId(dr.GetInt32(10))));
+            }
+            Banco.Fechar(cmd);
+            return Lista;
+        }
+        public static List<Endereco> ListarPorCliente (int cliente_id )
+        {
+            var cmd = Banco.Abir();
+            List<Endereco> Lista = new List<Endereco>();
+            cmd.CommandText = "select * from enderecos where cliente_id="+cliente_id;
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {

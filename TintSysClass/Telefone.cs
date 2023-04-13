@@ -41,21 +41,40 @@ namespace TintSysClass
         /// <summary>
         /// Insere no Banco usuários conforme a sequência de Valores
         /// </summary>
-        public void Inserir(int cliente_id)
+        public void Inserir(int cliente)
         {
-            MySqlCommand cmd = Banco.Abir();
-            cmd.CommandText = "insert telefones (cliente_di, numero, tipo) " +
-                "values (" + cliente_id + ", '" + Numero + "', '" + Tipo + "')";
+            var cmd = Banco.Abir();
+            cmd.CommandText = "insert telefones (numero, tipo, cliente_id) value (@numero, @tipo,"+cliente+")";
+            cmd.Parameters.Add("@numero", MySqlDbType.VarChar).Value = Numero;
+            cmd.Parameters.Add("Tipo", MySqlDbType.VarChar).Value = Tipo;
+            cmd.Parameters.Add("@cliente", MySqlDbType.Int32).Value = cliente;
             cmd.ExecuteNonQuery();
-            cmd.CommandText = "select @@indentity";
+            cmd.CommandText = "select @@identity";
             Id = Convert.ToInt32(cmd.ExecuteScalar());
             Banco.Fechar(cmd);
         }
-        public static List<Telefone> ListarPorCliente (int cliente_id)
+        public static List<Telefone> Listar()
         {
             List<Telefone> ListaTel = new List<Telefone>();
             var cmd = Banco.Abir();
-                cmd.CommandText = "select numero, tipo, id  from telefones where cliente_id =" + cliente_id;
+            cmd.CommandText = "select * from telefones";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                ListaTel.Add(new Telefone(
+                    dr.GetInt32(0),
+                    dr.GetString(1),
+                    dr.GetString(2),
+                    Cliente.ObterPorId(dr.GetInt32(3))));
+            }
+            Banco.Fechar(cmd);
+            return ListaTel;
+        }
+        public static List<Telefone> ListarPorCliente (int Cliente)
+        {
+            List<Telefone> ListaTel = new List<Telefone>();
+            var cmd = Banco.Abir();
+                cmd.CommandText = "select * from telefones where cliente_id =" + Cliente;
             var dr = cmd.ExecuteReader();
             while (dr.Read()) 
             {
