@@ -213,6 +213,7 @@
             // 
             // btnInserirCliente
             // 
+            this.btnInserirCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInserirCliente.Image = global::TintSysDesk.Properties.Resources.Add;
             this.btnInserirCliente.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnInserirCliente.Location = new System.Drawing.Point(22, 211);
