@@ -56,5 +56,12 @@ namespace TintSysDesk
             frmprdutos.MdiParent = this;
             frmprdutos.Show();
         }
+
+        private void novoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPedido frmpedido = new FrmPedido();
+            frmpedido.MdiParent = this;
+            frmpedido.Show();
+        }
     }
 }
