@@ -21,42 +21,42 @@ namespace TintSysClass
             
         public Pedido () { }
 
-        public Pedido(int id, DateTime data, string status, double desconto, Cliente idCliente, Usuario idUsuario, DateTime arquivado, string hashcode)
+        public Pedido(int id, DateTime data, string status, double desconto, Cliente cliente, Usuario usuario, DateTime arquivado, string hashcode)
         {
             Id = id;
             Data = data;
             Status = status;
             Desconto = desconto;
-            Cliente = idCliente;
-            Usuario = idUsuario;
+            Cliente = cliente;
+            Usuario = usuario;
             Arquivado = arquivado;
             Hashcode = hashcode;
         }
 
-        public Pedido(DateTime data, string status, double desconto, Cliente idCliente, Usuario idUsuario, DateTime arquivado, string hashcode)
+        public Pedido(DateTime data, string status, double desconto, Cliente cliente, Usuario usuario, DateTime arquivado, string hashcode)
         {
             Data = data;
             Status = status;
             Desconto = desconto;
-            Cliente = idCliente;
-            Usuario = idUsuario;
+            Cliente = cliente;
+            Usuario = usuario;
             Arquivado = arquivado;
             Hashcode = hashcode;
         }
 
-        public Pedido(DateTime data, string status, double desconto, Cliente idCliente, Usuario idUsuario, DateTime arquivado)
+        public Pedido(DateTime data, string status, double desconto, Cliente cliente, Usuario usuario, DateTime arquivado)
         {
             Data = data;
             Status = status;
             Desconto = desconto;
-            Cliente = idCliente;
-            Usuario = idUsuario;
+            Cliente = cliente;
+            Usuario = usuario;
             Arquivado = arquivado;
         }
-        public Pedido(Cliente idCliente, Usuario idUsuario)
+        public Pedido(Cliente cliente, Usuario usuario)
         {
-            Cliente = idCliente;
-            Usuario = idUsuario;
+            Cliente = cliente;
+            Usuario = usuario;
         }
         public void Inserir ()
         {
@@ -65,7 +65,7 @@ namespace TintSysClass
                 "values (default, Default,0, @cliente, @usuario, @hash)";
             cmd.Parameters.Add("@cliente", MySqlDbType.Int32).Value = Cliente.Id;
             cmd.Parameters.Add("@usuario", MySqlDbType.Int32).Value = Usuario.Id;
-            cmd.Parameters.Add("@usuario", MySqlDbType.VarChar).Value = ObterHashCode(Id, Id);
+            cmd.Parameters.Add("@usuario", MySqlDbType.VarChar).Value = ObterHashCode(Cliente.Id, Usuario.Id);
             cmd.ExecuteNonQuery();
             cmd.CommandText = "select @@identity";
             Id = Convert.ToInt32(cmd.ExecuteScalar());
@@ -134,15 +134,13 @@ namespace TintSysClass
             Banco.Fechar(cmd);
             return lista;
         }
-        public void Atualizar ()
+        public void Atualizar (int id)
         {
             var cmd = Banco.Abir();
-            cmd.CommandText = "update pedidos set data = @data, status = @status, desconto = @desconto,arquivado = @arquivado ,hashcode = @hashcode";
-            cmd.Parameters.Add("@data", MySqlDbType.DateTime).Value = Data;
+            cmd.CommandText = "update pedidos set status = @status, desconto = @desconto,arquivado = @arquivado where id ="+id;
             cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = Status;
             cmd.Parameters.Add("@desconto", MySqlDbType.Double).Value = Desconto;
             cmd.Parameters.Add("@arquivo", MySqlDbType.Date).Value = Arquivado;
-            cmd.Parameters.Add("@hashcode", MySqlDbType.VarChar).Value = Hashcode;
             cmd.ExecuteNonQuery();
             Id = Convert.ToInt32(cmd.ExecuteScalar());
             Banco.Fechar(cmd);
@@ -155,15 +153,17 @@ namespace TintSysClass
         {
 
         }
-        private string ObterHashCode(int IdCliente, int IdUsuario) 
+        private string ObterHashCode(int Cliente, int Usuario) 
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("PD-");
-            sb.Append(IdCliente);
-            sb.Append(IdUsuario);
             Random rd = new Random();
-            sb.Append(rd.Next(123452,543210));
-            return sb.ToString();  
+            sb.Append(rd.Next(123450,543210));
+            sb.Append("");
+            sb.Append(Cliente);
+            sb.Append("-");
+            sb.Append(Usuario);
+            return sb.ToString();
         }
     }
 }

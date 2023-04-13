@@ -16,10 +16,10 @@ namespace TintSysClass
         public double Desconto { get; set; }
 
         public ItemPedido(){}
-        public ItemPedido(int id,Produto idProduto, double preco, double quantidade, double desconto)
+        public ItemPedido(int id,Produto produto, double preco, double quantidade, double desconto)
         {
             Id = id;
-            Produto = idProduto;
+            Produto = produto;
             Preco = preco;
             Quantidade = quantidade;
             Desconto = desconto;
@@ -47,23 +47,22 @@ namespace TintSysClass
             Id = Convert.ToInt32(cmd.ExecuteScalar());
             Banco.Fechar(cmd);
         }
-        public static ItemPedido ObterPorId (int id)
+        public static ItemPedido BuscarPorProdutoPedido(int pedido, int produto)
         {
-            ItemPedido itempedido = null;
+            ItemPedido iten = new ItemPedido();
             var cmd = Banco.Abir();
-            cmd.CommandText = "select * from itempedido where id ="+id;
+            cmd.CommandText = "select * from itempedido where pedido_id ="+pedido;
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                itempedido = new ItemPedido(
-                    dr.GetInt32(0),
-                    Produto.ObterPorId(dr.GetInt32(1)),
-                    dr.GetDouble(2),
-                    dr.GetDouble(3),
-                    dr.GetDouble(4));
+                iten.Id = dr.GetInt32(0);
+                iten.Produto = Produto.ObterPorId(dr.GetInt32(2));
+                iten.Preco = dr.GetDouble(3);
+                iten.Quantidade = dr.GetDouble(4);
+                iten.Desconto = dr.GetDouble(5);
             }
             Banco.Fechar(cmd);
-            return itempedido;
+            return iten;
         }
     }
 }

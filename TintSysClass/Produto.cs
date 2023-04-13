@@ -43,6 +43,7 @@ namespace TintSysClass
             Preco = preco;
             Desconto = desconto;
         }
+
         public void Inserir()
         {
             var cmd = Banco.Abir();

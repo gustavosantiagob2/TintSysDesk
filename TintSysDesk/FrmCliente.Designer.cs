@@ -31,6 +31,10 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
+            this.clnIdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnNomeCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnEmialCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEdiatrCliente = new System.Windows.Forms.Button();
             this.btnConsultarCliente = new System.Windows.Forms.Button();
             this.btnInserirCliente = new System.Windows.Forms.Button();
@@ -58,6 +62,16 @@
             this.mskNumeroTelefone = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvEnderecos = new System.Windows.Forms.DataGridView();
+            this.clnCep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnEndereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cluNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnComplemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnBairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnUf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnTiipoEndereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbTipoEndereco = new System.Windows.Forms.ComboBox();
             this.mskCepCliente = new System.Windows.Forms.MaskedTextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -77,20 +91,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.clnCep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnEndereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cluNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnComplemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnBairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnUf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnTiipoEndereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnIdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnNomeCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnEmialCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
@@ -104,11 +104,11 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(40, 11);
+            this.tabControl1.Location = new System.Drawing.Point(12, 11);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1340, 863);
+            this.tabControl1.Size = new System.Drawing.Size(1793, 964);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -154,6 +154,42 @@
             this.dgvCliente.Size = new System.Drawing.Size(588, 185);
             this.dgvCliente.TabIndex = 34;
             this.dgvCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
+            // clnIdCliente
+            // 
+            this.clnIdCliente.Frozen = true;
+            this.clnIdCliente.HeaderText = "Id";
+            this.clnIdCliente.MinimumWidth = 6;
+            this.clnIdCliente.Name = "clnIdCliente";
+            this.clnIdCliente.ReadOnly = true;
+            this.clnIdCliente.Width = 50;
+            // 
+            // clnCpf
+            // 
+            this.clnCpf.Frozen = true;
+            this.clnCpf.HeaderText = "Cpf";
+            this.clnCpf.MinimumWidth = 6;
+            this.clnCpf.Name = "clnCpf";
+            this.clnCpf.ReadOnly = true;
+            this.clnCpf.Width = 125;
+            // 
+            // clnNomeCliente
+            // 
+            this.clnNomeCliente.Frozen = true;
+            this.clnNomeCliente.HeaderText = "Nome";
+            this.clnNomeCliente.MinimumWidth = 6;
+            this.clnNomeCliente.Name = "clnNomeCliente";
+            this.clnNomeCliente.ReadOnly = true;
+            this.clnNomeCliente.Width = 125;
+            // 
+            // clnEmialCliente
+            // 
+            this.clnEmialCliente.Frozen = true;
+            this.clnEmialCliente.HeaderText = "E-mail";
+            this.clnEmialCliente.MinimumWidth = 6;
+            this.clnEmialCliente.Name = "clnEmialCliente";
+            this.clnEmialCliente.ReadOnly = true;
+            this.clnEmialCliente.Width = 215;
             // 
             // btnEdiatrCliente
             // 
@@ -310,7 +346,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1332, 834);
+            this.tabPage2.Size = new System.Drawing.Size(1785, 935);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Contato";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
@@ -483,6 +519,95 @@
             this.dgvEnderecos.Size = new System.Drawing.Size(1193, 158);
             this.dgvEnderecos.TabIndex = 47;
             this.dgvEnderecos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // clnCep
+            // 
+            this.clnCep.Frozen = true;
+            this.clnCep.HeaderText = "Cep";
+            this.clnCep.MinimumWidth = 6;
+            this.clnCep.Name = "clnCep";
+            this.clnCep.ReadOnly = true;
+            this.clnCep.Width = 75;
+            // 
+            // clnEndereco
+            // 
+            this.clnEndereco.Frozen = true;
+            this.clnEndereco.HeaderText = "Logradouro";
+            this.clnEndereco.MinimumWidth = 6;
+            this.clnEndereco.Name = "clnEndereco";
+            this.clnEndereco.ReadOnly = true;
+            this.clnEndereco.Width = 130;
+            // 
+            // cluNumero
+            // 
+            this.cluNumero.Frozen = true;
+            this.cluNumero.HeaderText = "Número";
+            this.cluNumero.MinimumWidth = 6;
+            this.cluNumero.Name = "cluNumero";
+            this.cluNumero.ReadOnly = true;
+            this.cluNumero.Width = 75;
+            // 
+            // clnComplemento
+            // 
+            this.clnComplemento.Frozen = true;
+            this.clnComplemento.HeaderText = "Complemento";
+            this.clnComplemento.MinimumWidth = 6;
+            this.clnComplemento.Name = "clnComplemento";
+            this.clnComplemento.ReadOnly = true;
+            this.clnComplemento.Width = 120;
+            // 
+            // clnBairro
+            // 
+            this.clnBairro.Frozen = true;
+            this.clnBairro.HeaderText = "Bairro";
+            this.clnBairro.MinimumWidth = 6;
+            this.clnBairro.Name = "clnBairro";
+            this.clnBairro.ReadOnly = true;
+            this.clnBairro.Width = 65;
+            // 
+            // clnCidade
+            // 
+            this.clnCidade.Frozen = true;
+            this.clnCidade.HeaderText = "Cidade";
+            this.clnCidade.MinimumWidth = 6;
+            this.clnCidade.Name = "clnCidade";
+            this.clnCidade.ReadOnly = true;
+            this.clnCidade.Width = 90;
+            // 
+            // clnEstado
+            // 
+            this.clnEstado.Frozen = true;
+            this.clnEstado.HeaderText = "Estado";
+            this.clnEstado.MinimumWidth = 6;
+            this.clnEstado.Name = "clnEstado";
+            this.clnEstado.ReadOnly = true;
+            this.clnEstado.Width = 125;
+            // 
+            // clnUf
+            // 
+            this.clnUf.Frozen = true;
+            this.clnUf.HeaderText = "Uf";
+            this.clnUf.MinimumWidth = 6;
+            this.clnUf.Name = "clnUf";
+            this.clnUf.ReadOnly = true;
+            this.clnUf.Width = 65;
+            // 
+            // clnTiipoEndereco
+            // 
+            this.clnTiipoEndereco.Frozen = true;
+            this.clnTiipoEndereco.HeaderText = "Tipo";
+            this.clnTiipoEndereco.MinimumWidth = 6;
+            this.clnTiipoEndereco.Name = "clnTiipoEndereco";
+            this.clnTiipoEndereco.ReadOnly = true;
+            this.clnTiipoEndereco.Width = 80;
+            // 
+            // clnNome
+            // 
+            this.clnNome.HeaderText = "Cliente";
+            this.clnNome.MinimumWidth = 6;
+            this.clnNome.Name = "clnNome";
+            this.clnNome.ReadOnly = true;
+            this.clnNome.Width = 50;
             // 
             // cmbTipoEndereco
             // 
@@ -663,131 +788,6 @@
             this.label5.Size = new System.Drawing.Size(39, 21);
             this.label5.TabIndex = 26;
             this.label5.Text = "CEP : ";
-            // 
-            // clnCep
-            // 
-            this.clnCep.Frozen = true;
-            this.clnCep.HeaderText = "Cep";
-            this.clnCep.MinimumWidth = 6;
-            this.clnCep.Name = "clnCep";
-            this.clnCep.ReadOnly = true;
-            this.clnCep.Width = 75;
-            // 
-            // clnEndereco
-            // 
-            this.clnEndereco.Frozen = true;
-            this.clnEndereco.HeaderText = "Logradouro";
-            this.clnEndereco.MinimumWidth = 6;
-            this.clnEndereco.Name = "clnEndereco";
-            this.clnEndereco.ReadOnly = true;
-            this.clnEndereco.Width = 130;
-            // 
-            // cluNumero
-            // 
-            this.cluNumero.Frozen = true;
-            this.cluNumero.HeaderText = "Número";
-            this.cluNumero.MinimumWidth = 6;
-            this.cluNumero.Name = "cluNumero";
-            this.cluNumero.ReadOnly = true;
-            this.cluNumero.Width = 75;
-            // 
-            // clnComplemento
-            // 
-            this.clnComplemento.Frozen = true;
-            this.clnComplemento.HeaderText = "Complemento";
-            this.clnComplemento.MinimumWidth = 6;
-            this.clnComplemento.Name = "clnComplemento";
-            this.clnComplemento.ReadOnly = true;
-            this.clnComplemento.Width = 120;
-            // 
-            // clnBairro
-            // 
-            this.clnBairro.Frozen = true;
-            this.clnBairro.HeaderText = "Bairro";
-            this.clnBairro.MinimumWidth = 6;
-            this.clnBairro.Name = "clnBairro";
-            this.clnBairro.ReadOnly = true;
-            this.clnBairro.Width = 65;
-            // 
-            // clnCidade
-            // 
-            this.clnCidade.Frozen = true;
-            this.clnCidade.HeaderText = "Cidade";
-            this.clnCidade.MinimumWidth = 6;
-            this.clnCidade.Name = "clnCidade";
-            this.clnCidade.ReadOnly = true;
-            this.clnCidade.Width = 90;
-            // 
-            // clnEstado
-            // 
-            this.clnEstado.Frozen = true;
-            this.clnEstado.HeaderText = "Estado";
-            this.clnEstado.MinimumWidth = 6;
-            this.clnEstado.Name = "clnEstado";
-            this.clnEstado.ReadOnly = true;
-            this.clnEstado.Width = 125;
-            // 
-            // clnUf
-            // 
-            this.clnUf.Frozen = true;
-            this.clnUf.HeaderText = "Uf";
-            this.clnUf.MinimumWidth = 6;
-            this.clnUf.Name = "clnUf";
-            this.clnUf.ReadOnly = true;
-            this.clnUf.Width = 65;
-            // 
-            // clnTiipoEndereco
-            // 
-            this.clnTiipoEndereco.Frozen = true;
-            this.clnTiipoEndereco.HeaderText = "Tipo";
-            this.clnTiipoEndereco.MinimumWidth = 6;
-            this.clnTiipoEndereco.Name = "clnTiipoEndereco";
-            this.clnTiipoEndereco.ReadOnly = true;
-            this.clnTiipoEndereco.Width = 80;
-            // 
-            // clnNome
-            // 
-            this.clnNome.HeaderText = "Cliente";
-            this.clnNome.MinimumWidth = 6;
-            this.clnNome.Name = "clnNome";
-            this.clnNome.ReadOnly = true;
-            this.clnNome.Width = 50;
-            // 
-            // clnIdCliente
-            // 
-            this.clnIdCliente.Frozen = true;
-            this.clnIdCliente.HeaderText = "Id";
-            this.clnIdCliente.MinimumWidth = 6;
-            this.clnIdCliente.Name = "clnIdCliente";
-            this.clnIdCliente.ReadOnly = true;
-            this.clnIdCliente.Width = 50;
-            // 
-            // clnCpf
-            // 
-            this.clnCpf.Frozen = true;
-            this.clnCpf.HeaderText = "Cpf";
-            this.clnCpf.MinimumWidth = 6;
-            this.clnCpf.Name = "clnCpf";
-            this.clnCpf.ReadOnly = true;
-            this.clnCpf.Width = 125;
-            // 
-            // clnNomeCliente
-            // 
-            this.clnNomeCliente.Frozen = true;
-            this.clnNomeCliente.HeaderText = "Nome";
-            this.clnNomeCliente.MinimumWidth = 6;
-            this.clnNomeCliente.Name = "clnNomeCliente";
-            this.clnNomeCliente.ReadOnly = true;
-            this.clnNomeCliente.Width = 125;
-            // 
-            // clnEmialCliente
-            // 
-            this.clnEmialCliente.Frozen = true;
-            this.clnEmialCliente.HeaderText = "E-mail";
-            this.clnEmialCliente.MinimumWidth = 6;
-            this.clnEmialCliente.Name = "clnEmialCliente";
-            this.clnEmialCliente.ReadOnly = true;
-            this.clnEmialCliente.Width = 215;
             // 
             // FrmCliente
             // 
