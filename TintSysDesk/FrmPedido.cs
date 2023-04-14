@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TintSysClass;
 
 namespace TintSysDesk
 {
@@ -29,8 +30,30 @@ namespace TintSysDesk
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            //grbDados
+            grbDados.Enabled = true;
             
+        }
+
+        private void FrmPedido_Load(object sender, EventArgs e)
+        {
+            cmbCliente.DataSource = Cliente.Listar();
+            cmbCliente.DisplayMember = "Nome";
+            cmbCliente.ValueMember = "Id";
+
+            cmbAtendente.DataSource = Usuario.Listar();
+            cmbAtendente.DisplayMember = "Nome";
+            cmbAtendente.ValueMember = "Id";
+        }
+
+        private void btnInserirProduto_Click(object sender, EventArgs e)
+        {
+            Pedido pedido = new Pedido(
+                Cliente.ObterPorId(Convert.ToInt32(cmbCliente.SelectedValue)),
+               Usuario.ObterPorId(Convert.ToInt32(cmbAtendente.SelectedValue)));
+            pedido.Inserir();
+            Pedido newped = Pedido.ObterPorId(pedido.Id);
+            lblpedido.Text = newped.Status + " - "+newped.Hashcode;
+            txtId.Text = newped.Id.ToString();
         }
     }
 }

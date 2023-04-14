@@ -21,7 +21,7 @@ namespace TintSysClass
             
         public Pedido () { }
 
-        public Pedido(int id, DateTime data, string status, double desconto, Cliente cliente, Usuario usuario, DateTime arquivado, string hashcode)
+        public Pedido(int id, DateTime data, string status, double desconto, Cliente cliente, Usuario usuario, string hashcode)
         {
             Id = id;
             Data = data;
@@ -29,7 +29,7 @@ namespace TintSysClass
             Desconto = desconto;
             Cliente = cliente;
             Usuario = usuario;
-            Arquivado = arquivado;
+            //Arquivado = arquivado;
             Hashcode = hashcode;
             Itens = ItemPedido.ListarPorPedido(id);
         }
@@ -66,7 +66,7 @@ namespace TintSysClass
                 "values (default, Default,0, @cliente, @usuario, @hash)";
             cmd.Parameters.Add("@cliente", MySqlDbType.Int32).Value = Cliente.Id;
             cmd.Parameters.Add("@usuario", MySqlDbType.Int32).Value = Usuario.Id;
-            cmd.Parameters.Add("@usuario", MySqlDbType.VarChar).Value = ObterHashCode(Cliente.Id, Usuario.Id);
+            cmd.Parameters.Add("@hash", MySqlDbType.VarChar).Value = ObterHashCode(Cliente.Id, Usuario.Id);
             cmd.ExecuteNonQuery();
             cmd.CommandText = "select @@identity";
             Id = Convert.ToInt32(cmd.ExecuteScalar());
@@ -76,7 +76,7 @@ namespace TintSysClass
         {
             Pedido pedido = null;
             var cmd = Banco.Abir();
-            cmd.CommandText = "select * from pedido where cliente_id =" +id;
+            cmd.CommandText = "select * from pedidos where cliente_id =" +id;
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -87,7 +87,6 @@ namespace TintSysClass
                    dr.GetDouble(3),
                    Cliente.ObterPorId(dr.GetInt32(4)),
                    Usuario.ObterPorId(dr.GetInt32(5)),
-                   dr.GetDateTime(6),
                    dr.GetString(7));
             }
             Banco.Fechar(cmd);
@@ -97,7 +96,7 @@ namespace TintSysClass
         {
              List<Pedido> Pedidos = null;
             var cmd = Banco.Abir();
-            cmd.CommandText = "select * from pedido where cliente_id =" + id;
+            cmd.CommandText = "select * from pedidos where cliente_id =" + id;
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -109,7 +108,6 @@ namespace TintSysClass
                    dr.GetDouble(3),
                    Cliente.ObterPorId(dr.GetInt32(4)),
                    Usuario.ObterPorId(dr.GetInt32(5)),
-                   dr.GetDateTime(6),
                    dr.GetString(7)));
             }
             Banco.Fechar(cmd);
@@ -130,33 +128,32 @@ namespace TintSysClass
                     dr.GetDouble(3),
                     Cliente.ObterPorId(dr.GetInt32(4)),
                     Usuario.ObterPorId(dr.GetInt32(5)),
-                    dr.GetDateTime(6),
                     dr.GetString(7)));
             }
             Banco.Fechar(cmd);
             return lista;
         }
-        //public  static List<Pedido> Listar()
-        //{
-        //    Pedido pedido = null;
-        //    var cmd = Banco.Abir();
-        //    cmd.CommandText = "select * from pedidos";
-        //    var dr = cmd.ExecuteReader();
-        //    while (dr.Read())
-        //    {
-        //        pedido = new Pedido(
-        //           dr.GetInt32(0),
-        //           dr.GetDateTime(1),
-        //           dr.GetString(2),
-        //           dr.GetDouble(3),
-        //           Cliente.ObterPorId(dr.GetInt32(4)),
-        //           Usuario.ObterPorId(dr.GetInt32(5)),
-        //           dr.GetDateTime(6),
-        //           dr.GetString(7));
-        //    }
-        //    Banco.Fechar(cmd);
-        //    return pedido;
-        //}
+        public static List<Pedido> Listar()
+        {
+            List<Pedido> pedidos = null;
+            var cmd = Banco.Abir();
+            cmd.CommandText = "select * from pedidos";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                pedidos.Add(
+                    new Pedido(
+                    dr.GetInt32(0),
+                    dr.GetDateTime(1),
+                    dr.GetString(2),
+                    dr.GetDouble(3),
+                    Cliente.ObterPorId(dr.GetInt32(4)),
+                    Usuario.ObterPorId(dr.GetInt32(5)),
+                    dr.GetString(7)));
+            }
+            Banco.Fechar(cmd);
+            return pedidos;
+        }
         public static bool Fechar(int id)
         {
             bool teste = false;
