@@ -16,9 +16,9 @@ namespace TintSysClass
         public double Desconto { get; set; }
 
         public ItemPedido(){}
-        public ItemPedido(int id,Produto produto, double preco, double quantidade, double desconto)
+        public ItemPedido(int pedido_id,Produto produto, double preco, double quantidade, double desconto)
         {
-            Id = id;
+            Id = pedido_id;
             Produto = produto;
             Preco = preco;
             Quantidade = quantidade;
@@ -31,13 +31,19 @@ namespace TintSysClass
             Quantidade = quantidade;
             Desconto = desconto;
         }
+        public ItemPedido(double preco, double quantidade, double desconto)
+        {
+            Preco = preco;
+            Quantidade = quantidade;
+            Desconto = desconto;
+        }
         public void Inserir()
         {
             var cmd = Banco.Abir();
             cmd.CommandText = "insert itempedido (pedido_id,produto_id, preco, quantidade,desconto) " +
                 "value (@pedido_id, @produto_id, @preco, @quantidade, @desconto/100)";
             cmd.Parameters.Clear();
-            cmd.Parameters.AddWithValue("@peido_id", Id);
+            cmd.Parameters.AddWithValue("@pedido_id", Id);
             cmd.Parameters.AddWithValue("@produto_id", Produto.Id);
             cmd.Parameters.AddWithValue("@preco", Produto.Preco);
             cmd.Parameters.AddWithValue("@quantidade", Quantidade);
