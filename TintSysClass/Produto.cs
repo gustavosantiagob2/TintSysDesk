@@ -48,7 +48,7 @@ namespace TintSysClass
         {
             var cmd = Banco.Abir();
             cmd.CommandText = "insert produtos (descricao, unidade , codbar, preco, desconto, descontinuado) " +
-                "value (@descricao, @unidade, @codbar, @preco, @desconto/100,0 )";
+                "value (@descricao, @unidade, @codbar, @preco, @desconto,0 )";
             cmd.Parameters.AddWithValue("@descricao", Descricao);
             cmd.Parameters.AddWithValue("@unidade", Unidade);
             cmd.Parameters.AddWithValue("@codbar", CodBar);

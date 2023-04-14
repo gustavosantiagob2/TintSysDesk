@@ -76,7 +76,7 @@ namespace TintSysClass
         {
             Pedido pedido = null;
             var cmd = Banco.Abir();
-            cmd.CommandText = "select * from pedidos where cliente_id =" +id;
+            cmd.CommandText = "select * from pedidos where id =" +id;
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
