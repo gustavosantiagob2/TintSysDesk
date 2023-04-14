@@ -32,7 +32,7 @@ namespace TintSysDesk
         private void InserirCLiente()
         {
             Cliente cliente = new Cliente(
-               mktCpf.Text, txtNomeCliente.Text, txtEmailCliente.Text
+                txtNomeCliente.Text, mktCpf.Text, txtEmailCliente.Text
                 );
             cliente.Inserir();
             txtidCliente.Text = cliente.Id.ToString();

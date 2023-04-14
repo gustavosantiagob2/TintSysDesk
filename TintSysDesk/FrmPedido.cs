@@ -37,8 +37,8 @@ namespace TintSysDesk
         private void FrmPedido_Load(object sender, EventArgs e)
         {
             cmbCliente.DataSource = Cliente.Listar();
-            cmbCliente.DisplayMember = "Nome";
-            cmbCliente.ValueMember = "Id";
+            cmbCliente.DisplayMember= "Nome";
+            cmbCliente.ValueMember= "Id";
 
             cmbAtendente.DataSource = Usuario.Listar();
             cmbAtendente.DisplayMember = "Nome";
@@ -54,6 +54,11 @@ namespace TintSysDesk
             Pedido newped = Pedido.ObterPorId(pedido.Id);
             lblpedido.Text = newped.Status + " - "+newped.Hashcode;
             txtId.Text = newped.Id.ToString();
+        }
+
+        private void cmbCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
