@@ -38,12 +38,16 @@ namespace TintSysDesk
             txtidCliente.Text = cliente.Id.ToString();
             CarregarGrid();
         }
-        public void CarregarGrid()
+        public void CarregarGrid(string texto = "")
         {
-            List<Cliente> lista = Cliente.Listar();
+            List<Cliente> lista = null;
+            if (Text != string.Empty)
+                lista = Cliente.ListarPorCpf(texto);
+            else
+                lista = Cliente.Listar();
             int count = 0;
             dgvCliente.Rows.Clear();
-            foreach(Cliente cli in lista)
+            foreach (Cliente cli in lista)
             {
                 dgvCliente.Rows.Add();
                 dgvCliente.Rows[count].Cells[0].Value = cli.Id.ToString();
@@ -56,7 +60,7 @@ namespace TintSysDesk
         }
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -67,7 +71,7 @@ namespace TintSysDesk
         private void button2_Click(object sender, EventArgs e)
         {
             Telefone telefone = new Telefone(
-                mskNumeroTelefone.Text,cmbTipoTelefone.Text
+                mskNumeroTelefone.Text, cmbTipoTelefone.Text
                 );
             telefone.Inserir(Convert.ToInt32(txtidCliente.Text));
             CarregaTelefone();
@@ -88,14 +92,14 @@ namespace TintSysDesk
                 cmbTipoEndereco.Text, Cliente.ObterPorId(Convert.ToInt32((txtidCliente.Text))));
             endereco.Inserir(Convert.ToInt32(txtidCliente.Text));
             CarregarEndereco();
-           
+
         }
         public void CarregaTelefone()
         {
             List<Telefone> lista = Telefone.Listar();
             int count = 0;
             dgvTelefone.Rows.Clear();
-            foreach  (Telefone tele in lista)
+            foreach (Telefone tele in lista)
             {
                 dgvTelefone.Rows.Add();
                 dgvTelefone.Rows[count].Cells[1].Value = tele.Numero;
@@ -164,7 +168,7 @@ namespace TintSysDesk
                 txtIdConsulta.ReadOnly = true;
                 btnEditarEndereco.Text = "...";
                 var endereco = Endereco.ObterPorId(int.Parse(txtIdConsulta.Text));
-                if (endereco.Id >0)
+                if (endereco.Id > 0)
                 {
                     mskCepCliente.Text = endereco.Cep;
                     txtLogradouroCliente.Text = endereco.Logradouro;
@@ -177,6 +181,24 @@ namespace TintSysDesk
                     cmbTipoEndereco.Text = endereco.Tipo;
                     btnConsultarCliente.Enabled = true;
                 }
+            }
+        }
+
+        private void btnConsultarCliente_Click(object sender, EventArgs e)
+        {
+            panConsultarCliente.Visible = true;
+            txtConsultarCliente.Visible = true;
+        }
+
+        private void txtConsultarCliente_TextChanged(object sender, EventArgs e)
+        {
+            if (txtConsultarCliente.Text.Length > 1)
+            {
+                CarregarGrid(txtConsultarCliente.Text);
+            }
+            else if (txtConsultarCliente.Text.Length < 2)
+            {
+                CarregarGrid();
             }
         }
     }

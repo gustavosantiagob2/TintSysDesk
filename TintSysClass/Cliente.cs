@@ -162,6 +162,27 @@ namespace TintSysClass
             Banco.Fechar(cmd);
             return Lista;
         }
+        public static List<Cliente> ListarPorCpf (string cpf = null)
+        {
+            List<Cliente> lista = new List<Cliente>();
+            var cmd = Banco.Abir();
+            cmd.CommandText = "select * from clientes where cpf ="+cpf;
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                lista.Add(new Cliente(
+                   dr.GetInt32(0),
+                    dr.GetString(1),
+                    dr.GetString(2),
+                    dr.GetString(3),
+                    dr.GetDateTime(4),
+                    dr.GetBoolean(5)
+                    ));
+            }
+            Banco.Fechar(cmd);
+            return lista;
+            
+        }
         /// <summary>
         /// Atualiza o campo de Nome, datacad e se o cliente está ativo
         /// </summary>

@@ -117,5 +117,10 @@ namespace TintSysDesk
             }
 
         }
+
+        private void txtTotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
