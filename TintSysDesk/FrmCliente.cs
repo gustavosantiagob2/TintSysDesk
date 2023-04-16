@@ -179,26 +179,7 @@ namespace TintSysDesk
                     txtEstadoCliente.Text = endereco.Estado;
                     txtUfCliente.Text = endereco.Uf;
                     cmbTipoEndereco.Text = endereco.Tipo;
-                    btnConsultarCliente.Enabled = true;
                 }
-            }
-        }
-
-        private void btnConsultarCliente_Click(object sender, EventArgs e)
-        {
-            panConsultarCliente.Visible = true;
-            txtConsultarCliente.Visible = true;
-        }
-
-        private void txtConsultarCliente_TextChanged(object sender, EventArgs e)
-        {
-            if (txtConsultarCliente.Text.Length > 1)
-            {
-                CarregarGrid(txtConsultarCliente.Text);
-            }
-            else if (txtConsultarCliente.Text.Length < 2)
-            {
-                CarregarGrid();
             }
         }
     }

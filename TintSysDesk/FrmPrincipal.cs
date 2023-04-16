@@ -48,6 +48,9 @@ namespace TintSysDesk
 
         private void listarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            FrmListaCliente frmlistacliente = new FrmListaCliente();
+            frmlistacliente.MdiParent = this;
+            frmlistacliente.Show();
         }
 
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
