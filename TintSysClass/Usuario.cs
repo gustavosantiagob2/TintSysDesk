@@ -79,21 +79,26 @@ namespace TintSysClass
             Nivel = nivel;
             Ativo = ativo;
         }
+        public Usuario(string email, string senha)
+        {
+            Email = email;
+            Senha = senha;
+        }
         /// <summary>
         /// Metodo para efuetua o login se o usuário for ativo se não for ativo nem permite efetuar o login
         /// </summary>
-        /// <param name="_email">Email cadastrado</param>
-        /// <param name="_senha">Senha cadastrada</param>
+        /// <param name="email">Email cadastrado</param>
+        /// <param name="senha">Senha cadastrada</param>
         /// <returns></returns>
-        public static Usuario EfetuarLogin(string _email, string _senha)
+        public static Usuario EfetuarLogin(string email, string senha)
         {
                  
             Usuario usuario = null;
             MySqlCommand cmd = Banco.Abir();
             cmd.CommandText = "select id, nome, email, nivel from usuarios " +
                 "where email = @email and senha = md5(@senha) and ativo = 1";
-            cmd.Parameters.AddWithValue("@email", _email);
-            cmd.Parameters.AddWithValue("@senha", _senha);
+            cmd.Parameters.AddWithValue("@email", email);
+            cmd.Parameters.AddWithValue("@senha", senha);
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {

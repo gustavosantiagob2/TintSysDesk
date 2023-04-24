@@ -21,7 +21,7 @@ namespace TintSysDesk
         }
         private void FrmCliente_Load(object sender, EventArgs e)
         {
-            CarregarGrid();
+            //CarregarGrid();
             CarregarEndereco();
             CarregaTelefone();
         }
@@ -36,28 +36,28 @@ namespace TintSysDesk
                 );
             cliente.Inserir();
             txtidCliente.Text = cliente.Id.ToString();
-            CarregarGrid();
+            //CarregarGrid();
         }
-        public void CarregarGrid(string texto = "")
-        {
-            List<Cliente> lista = null;
-            if (Text != string.Empty)
-                lista = Cliente.ListarPorCpf(texto);
-            else
-                lista = Cliente.Listar();
-            int count = 0;
-            dgvCliente.Rows.Clear();
-            foreach (Cliente cli in lista)
-            {
-                dgvCliente.Rows.Add();
-                dgvCliente.Rows[count].Cells[0].Value = cli.Id.ToString();
-                dgvCliente.Rows[count].Cells[1].Value = cli.Nome;
-                dgvCliente.Rows[count].Cells[2].Value = cli.Cpf;
-                dgvCliente.Rows[count].Cells[3].Value = cli.Email;
-                count++;
+        //public void CarregarGrid(string texto = "")
+        //{
+        //    List<Cliente> lista = null;
+        //    if (Text != string.Empty)
+        //        lista = Cliente.ListarPorCpf(texto);
+        //    else
+        //        lista = Cliente.Listar();
+        //    int count = 0;
+        //    dgvCliente.Rows.Clear();
+        //    foreach (Cliente cli in lista)
+        //    {
+        //        dgvCliente.Rows.Add();
+        //        dgvCliente.Rows[count].Cells[0].Value = cli.Id.ToString();
+        //        dgvCliente.Rows[count].Cells[1].Value = cli.Nome;
+        //        dgvCliente.Rows[count].Cells[2].Value = cli.Cpf;
+        //        dgvCliente.Rows[count].Cells[3].Value = cli.Email;
+        //        count++;
 
-            }
-        }
+        //    }
+        //}
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 

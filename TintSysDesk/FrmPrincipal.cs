@@ -66,5 +66,12 @@ namespace TintSysDesk
             frmpedido.MdiParent = this;
             frmpedido.Show();
         }
+
+        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmLoginUsuario frmLoginUsuario = new FrmLoginUsuario();
+            frmLoginUsuario.MdiParent = this;
+            frmLoginUsuario.Show();
+        }
     }
 }

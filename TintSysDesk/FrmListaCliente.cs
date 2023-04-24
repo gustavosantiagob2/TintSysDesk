@@ -16,5 +16,14 @@ namespace TintSysDesk
         {
             InitializeComponent();
         }
+
+        private void btnListarCliente_Click(object sender, EventArgs e)
+        {
+
+        }
+        public void CarregarClientes()
+        {
+
+        }
     }
 }

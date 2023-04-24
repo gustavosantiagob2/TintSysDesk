@@ -176,7 +176,7 @@ namespace TintSysClass
                     dr.GetString(2),
                     dr.GetString(3),
                     dr.GetDateTime(4),
-                    dr.GetBoolean(5)
+                   dr.GetBoolean(5)
                     ));
             }
             Banco.Fechar(cmd);
