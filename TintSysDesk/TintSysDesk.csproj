@@ -98,6 +98,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAreaDoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAreaDoUsuario.Designer.cs">
+      <DependentUpon>FrmAreaDoUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAreaDoUsuario.resx">
+      <DependentUpon>FrmAreaDoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,6 +222,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\User.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\previous24.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

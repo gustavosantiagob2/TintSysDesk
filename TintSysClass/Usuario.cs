@@ -95,8 +95,8 @@ namespace TintSysClass
                  
             Usuario usuario = null;
             MySqlCommand cmd = Banco.Abir();
-            cmd.CommandText = "select id, nome, email, nivel from usuarios " +
-                "where email = @email and senha = md5(@senha) and ativo = 1";
+            cmd.CommandText = "select id, nome, email from usuarios " +
+                "where email = @email and senha = md5(@senha) ";
             cmd.Parameters.AddWithValue("@email", email);
             cmd.Parameters.AddWithValue("@senha", senha);
             var dr = cmd.ExecuteReader();
@@ -106,7 +106,6 @@ namespace TintSysClass
                 usuario.Id = dr.GetInt32(0);
                 usuario.Nome = dr.GetString(1);
                 usuario.Email = dr.GetString(2);
-                usuario.Nivel = Nivel.ObterPorID(dr.GetInt32(3));
             }
             Banco.Fechar(cmd);
             return usuario;

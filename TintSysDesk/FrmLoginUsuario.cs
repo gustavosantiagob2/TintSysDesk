@@ -33,26 +33,34 @@ namespace TintSysDesk
    
             if (txtEmail.Text != string.Empty)
             {
-                Usuario usuario = new Usuario(
-                txtEmail.Text, txtSenha.Text
-                 );
-                string email = txtEmail.Text;
-                string senha = txtSenha.Text;
-                Usuario.EfetuarLogin(txtEmail.Text, txtSenha.Text);
-            }
-            else if (txtSenha.Text == string.Empty)
-            {
-                MessageBox.Show("Você não digitou sua senha","Erro");
-            }
-            else if (txtEmail.Text == string.Empty)
-            {
-                MessageBox.Show("Você não digitou seu e-mail", "Erro");
-                Enabled= false;
+                if (txtSenha.Text != string.Empty)
+                {
+                    
+                    Usuario usuario = new Usuario(
+                    txtEmail.Text, txtSenha.Text);
+                    Usuario.EfetuarLogin(txtEmail.Text, txtSenha.Text);
+                    FrmAreaDoUsuario frm = new FrmAreaDoUsuario();
+                    frm.ShowDialog();
+                    
+                }
+           
             }
             else
             {
-       
+                lblRecuperacao.ForeColor = Color.FromArgb(232,22,22);
+                lblRecuperacao.Text = "clique aqui para se cadastrar";
+                btnCadastro.Enabled = true;
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
