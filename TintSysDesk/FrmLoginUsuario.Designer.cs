@@ -34,9 +34,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.btnCadastro = new System.Windows.Forms.Button();
             this.lblRecuperacao = new System.Windows.Forms.Label();
-            this.btnVoltar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCadastro = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtEmail
@@ -78,25 +79,13 @@
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Bahnschrift Condensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(691, 332);
+            this.btnLogin.Location = new System.Drawing.Point(570, 332);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(86, 34);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnCadastro
-            // 
-            this.btnCadastro.Enabled = false;
-            this.btnCadastro.Font = new System.Drawing.Font("Bahnschrift Condensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastro.Location = new System.Drawing.Point(822, 332);
-            this.btnCadastro.Name = "btnCadastro";
-            this.btnCadastro.Size = new System.Drawing.Size(122, 34);
-            this.btnCadastro.TabIndex = 2;
-            this.btnCadastro.Text = "Cadastrar";
-            this.btnCadastro.UseVisualStyleBackColor = true;
-            this.btnCadastro.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblRecuperacao
             // 
@@ -110,24 +99,33 @@
             this.lblRecuperacao.TabIndex = 1;
             this.lblRecuperacao.Click += new System.EventHandler(this.label3_Click);
             // 
-            // btnVoltar
+            // pictureBox1
             // 
-            this.btnVoltar.Image = global::TintSysDesk.Properties.Resources.previous24;
-            this.btnVoltar.Location = new System.Drawing.Point(570, 332);
-            this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(65, 34);
-            this.btnVoltar.TabIndex = 3;
-            this.btnVoltar.UseVisualStyleBackColor = true;
-            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            this.pictureBox1.Image = global::TintSysDesk.Properties.Resources.LogoMercado;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(207, 151);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnCadastro
+            // 
+            this.btnCadastro.Location = new System.Drawing.Point(818, 332);
+            this.btnCadastro.Name = "btnCadastro";
+            this.btnCadastro.Size = new System.Drawing.Size(111, 34);
+            this.btnCadastro.TabIndex = 5;
+            this.btnCadastro.Text = "Cadastrar-se ";
+            this.btnCadastro.UseVisualStyleBackColor = true;
             // 
             // FrmLoginUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.BackColor = System.Drawing.Color.SeaGreen;
             this.ClientSize = new System.Drawing.Size(1760, 564);
-            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnCadastro);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblRecuperacao);
             this.Controls.Add(this.label2);
@@ -139,6 +137,7 @@
             this.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.Name = "FrmLoginUsuario";
             this.Text = "Login Usuário";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,8 +150,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Button btnCadastro;
         private System.Windows.Forms.Label lblRecuperacao;
-        private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnCadastro;
     }
 }

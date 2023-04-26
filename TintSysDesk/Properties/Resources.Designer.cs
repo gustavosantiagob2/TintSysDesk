@@ -83,6 +83,16 @@ namespace TintSysDesk.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LogoMercado {
+            get {
+                object obj = ResourceManager.GetObject("LogoMercado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap previous24 {
             get {
                 object obj = ResourceManager.GetObject("previous24", resourceCulture);

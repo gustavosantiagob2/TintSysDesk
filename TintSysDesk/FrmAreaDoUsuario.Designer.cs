@@ -34,7 +34,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.btnEnderecoPessoais = new System.Windows.Forms.Button();
+            this.btnInformacoesPessoais = new System.Windows.Forms.Button();
             this.btnVizuClientes = new System.Windows.Forms.Button();
             this.btnEdiClientes = new System.Windows.Forms.Button();
             this.btnVizuVendas = new System.Windows.Forms.Button();
@@ -60,6 +60,26 @@
             this.cln5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cln6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cln7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grbEdicao = new System.Windows.Forms.GroupBox();
+            this.txt1 = new System.Windows.Forms.TextBox();
+            this.lbl1 = new System.Windows.Forms.Label();
+            this.txt6 = new System.Windows.Forms.TextBox();
+            this.lbl6 = new System.Windows.Forms.Label();
+            this.txt5 = new System.Windows.Forms.TextBox();
+            this.lbl5 = new System.Windows.Forms.Label();
+            this.txt2 = new System.Windows.Forms.TextBox();
+            this.lbl2 = new System.Windows.Forms.Label();
+            this.txt3 = new System.Windows.Forms.TextBox();
+            this.lbl3 = new System.Windows.Forms.Label();
+            this.txt4 = new System.Windows.Forms.TextBox();
+            this.lbl4 = new System.Windows.Forms.Label();
+            this.cmb1 = new System.Windows.Forms.ComboBox();
+            this.lbl7 = new System.Windows.Forms.Label();
+            this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.lblPesquisa = new System.Windows.Forms.Label();
+            this.btnInfoCliente = new System.Windows.Forms.Button();
+            this.btnProdutos = new System.Windows.Forms.Button();
+            this.btnProdutosEstoque = new System.Windows.Forms.Button();
             this.tlpConsultas.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -69,7 +89,9 @@
             this.tlpInformacoes.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInformacoes)).BeginInit();
+            this.grbEdicao.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpConsultas
@@ -158,17 +180,16 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Ultimas atualizações";
             // 
-            // btnEnderecoPessoais
+            // btnInformacoesPessoais
             // 
-            this.btnEnderecoPessoais.Enabled = false;
-            this.btnEnderecoPessoais.Location = new System.Drawing.Point(15, 27);
-            this.btnEnderecoPessoais.Name = "btnEnderecoPessoais";
-            this.btnEnderecoPessoais.Size = new System.Drawing.Size(94, 34);
-            this.btnEnderecoPessoais.TabIndex = 0;
-            this.btnEnderecoPessoais.Text = "Endereços";
-            this.btnEnderecoPessoais.UseVisualStyleBackColor = true;
-            this.btnEnderecoPessoais.Click += new System.EventHandler(this.brnEnderecoPessoais_Click);
-            this.btnEnderecoPessoais.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnEnderecoPessoais_MouseClick);
+            this.btnInformacoesPessoais.Enabled = false;
+            this.btnInformacoesPessoais.Location = new System.Drawing.Point(15, 27);
+            this.btnInformacoesPessoais.Name = "btnInformacoesPessoais";
+            this.btnInformacoesPessoais.Size = new System.Drawing.Size(94, 34);
+            this.btnInformacoesPessoais.TabIndex = 0;
+            this.btnInformacoesPessoais.Text = "Informações";
+            this.btnInformacoesPessoais.UseVisualStyleBackColor = true;
+            this.btnInformacoesPessoais.Click += new System.EventHandler(this.brnEnderecoPessoais_Click);
             // 
             // btnVizuClientes
             // 
@@ -178,6 +199,7 @@
             this.btnVizuClientes.TabIndex = 0;
             this.btnVizuClientes.Text = "Vizualizar";
             this.btnVizuClientes.UseVisualStyleBackColor = true;
+            this.btnVizuClientes.Click += new System.EventHandler(this.btnVizuClientes_Click);
             // 
             // btnEdiClientes
             // 
@@ -224,9 +246,11 @@
             this.btnVizuProdutos.TabIndex = 0;
             this.btnVizuProdutos.Text = "Vizualizar";
             this.btnVizuProdutos.UseVisualStyleBackColor = true;
+            this.btnVizuProdutos.Click += new System.EventHandler(this.btnVizuProdutos_Click);
             // 
             // btnEdiProdutos
             // 
+            this.btnEdiProdutos.Enabled = false;
             this.btnEdiProdutos.Location = new System.Drawing.Point(119, 40);
             this.btnEdiProdutos.Name = "btnEdiProdutos";
             this.btnEdiProdutos.Size = new System.Drawing.Size(94, 34);
@@ -240,16 +264,17 @@
             this.tlpInformacoes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tlpInformacoes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tlpInformacoes.Controls.Add(this.dgvInformacoes, 0, 0);
+            this.tlpInformacoes.Controls.Add(this.grbEdicao, 1, 0);
             this.tlpInformacoes.Location = new System.Drawing.Point(12, 204);
             this.tlpInformacoes.Name = "tlpInformacoes";
             this.tlpInformacoes.RowCount = 1;
             this.tlpInformacoes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpInformacoes.Size = new System.Drawing.Size(1789, 311);
+            this.tlpInformacoes.Size = new System.Drawing.Size(1789, 378);
             this.tlpInformacoes.TabIndex = 1;
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.btnEnderecoPessoais);
+            this.groupBox6.Controls.Add(this.btnInformacoesPessoais);
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox6.Location = new System.Drawing.Point(3, 89);
             this.groupBox6.Name = "groupBox6";
@@ -279,6 +304,7 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.btnInfoCliente);
             this.groupBox7.Controls.Add(this.btnTelefoneClientes);
             this.groupBox7.Controls.Add(this.btnEnderecoClientes);
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -299,6 +325,8 @@
             // 
             // groupBox9
             // 
+            this.groupBox9.Controls.Add(this.btnProdutos);
+            this.groupBox9.Controls.Add(this.btnProdutosEstoque);
             this.groupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox9.Location = new System.Drawing.Point(1074, 89);
             this.groupBox9.Name = "groupBox9";
@@ -318,22 +346,24 @@
             // btnEnderecoClientes
             // 
             this.btnEnderecoClientes.Enabled = false;
-            this.btnEnderecoClientes.Location = new System.Drawing.Point(15, 27);
+            this.btnEnderecoClientes.Location = new System.Drawing.Point(115, 27);
             this.btnEnderecoClientes.Name = "btnEnderecoClientes";
             this.btnEnderecoClientes.Size = new System.Drawing.Size(94, 34);
             this.btnEnderecoClientes.TabIndex = 0;
             this.btnEnderecoClientes.Text = "Endereços";
             this.btnEnderecoClientes.UseVisualStyleBackColor = true;
+            this.btnEnderecoClientes.Click += new System.EventHandler(this.btnEnderecoClientes_Click);
             // 
             // btnTelefoneClientes
             // 
             this.btnTelefoneClientes.Enabled = false;
-            this.btnTelefoneClientes.Location = new System.Drawing.Point(115, 27);
+            this.btnTelefoneClientes.Location = new System.Drawing.Point(229, 27);
             this.btnTelefoneClientes.Name = "btnTelefoneClientes";
             this.btnTelefoneClientes.Size = new System.Drawing.Size(94, 34);
             this.btnTelefoneClientes.TabIndex = 0;
             this.btnTelefoneClientes.Text = "Telefone";
             this.btnTelefoneClientes.UseVisualStyleBackColor = true;
+            this.btnTelefoneClientes.Click += new System.EventHandler(this.btnTelefoneClientes_Click);
             // 
             // dgvInformacoes
             // 
@@ -355,8 +385,10 @@
             this.dgvInformacoes.RowHeadersVisible = false;
             this.dgvInformacoes.RowHeadersWidth = 51;
             this.dgvInformacoes.RowTemplate.Height = 24;
-            this.dgvInformacoes.Size = new System.Drawing.Size(709, 305);
+            this.dgvInformacoes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvInformacoes.Size = new System.Drawing.Size(709, 372);
             this.dgvInformacoes.TabIndex = 0;
+            this.dgvInformacoes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInformacoes_CellDoubleClick);
             // 
             // cln1
             // 
@@ -421,17 +453,199 @@
             this.cln7.ReadOnly = true;
             this.cln7.Width = 125;
             // 
+            // grbEdicao
+            // 
+            this.grbEdicao.Controls.Add(this.txtPesquisa);
+            this.grbEdicao.Controls.Add(this.cmb1);
+            this.grbEdicao.Controls.Add(this.lbl3);
+            this.grbEdicao.Controls.Add(this.lbl4);
+            this.grbEdicao.Controls.Add(this.lbl5);
+            this.grbEdicao.Controls.Add(this.txt4);
+            this.grbEdicao.Controls.Add(this.txt3);
+            this.grbEdicao.Controls.Add(this.txt5);
+            this.grbEdicao.Controls.Add(this.lbl7);
+            this.grbEdicao.Controls.Add(this.lbl6);
+            this.grbEdicao.Controls.Add(this.txt6);
+            this.grbEdicao.Controls.Add(this.lbl2);
+            this.grbEdicao.Controls.Add(this.txt2);
+            this.grbEdicao.Controls.Add(this.lblPesquisa);
+            this.grbEdicao.Controls.Add(this.lbl1);
+            this.grbEdicao.Controls.Add(this.txt1);
+            this.grbEdicao.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grbEdicao.Location = new System.Drawing.Point(718, 3);
+            this.grbEdicao.Name = "grbEdicao";
+            this.grbEdicao.Size = new System.Drawing.Size(1068, 372);
+            this.grbEdicao.TabIndex = 1;
+            this.grbEdicao.TabStop = false;
+            // 
+            // txt1
+            // 
+            this.txt1.Location = new System.Drawing.Point(26, 133);
+            this.txt1.Name = "txt1";
+            this.txt1.Size = new System.Drawing.Size(233, 28);
+            this.txt1.TabIndex = 0;
+            // 
+            // lbl1
+            // 
+            this.lbl1.AutoSize = true;
+            this.lbl1.Location = new System.Drawing.Point(34, 109);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(0, 21);
+            this.lbl1.TabIndex = 1;
+            // 
+            // txt6
+            // 
+            this.txt6.Location = new System.Drawing.Point(344, 192);
+            this.txt6.Name = "txt6";
+            this.txt6.Size = new System.Drawing.Size(150, 28);
+            this.txt6.TabIndex = 0;
+            // 
+            // lbl6
+            // 
+            this.lbl6.AutoSize = true;
+            this.lbl6.Location = new System.Drawing.Point(346, 170);
+            this.lbl6.Name = "lbl6";
+            this.lbl6.Size = new System.Drawing.Size(0, 21);
+            this.lbl6.TabIndex = 1;
+            // 
+            // txt5
+            // 
+            this.txt5.Location = new System.Drawing.Point(344, 133);
+            this.txt5.Name = "txt5";
+            this.txt5.Size = new System.Drawing.Size(150, 28);
+            this.txt5.TabIndex = 0;
+            // 
+            // lbl5
+            // 
+            this.lbl5.AutoSize = true;
+            this.lbl5.Location = new System.Drawing.Point(352, 109);
+            this.lbl5.Name = "lbl5";
+            this.lbl5.Size = new System.Drawing.Size(0, 21);
+            this.lbl5.TabIndex = 1;
+            // 
+            // txt2
+            // 
+            this.txt2.Location = new System.Drawing.Point(26, 195);
+            this.txt2.Name = "txt2";
+            this.txt2.Size = new System.Drawing.Size(233, 28);
+            this.txt2.TabIndex = 0;
+            // 
+            // lbl2
+            // 
+            this.lbl2.AutoSize = true;
+            this.lbl2.Location = new System.Drawing.Point(34, 171);
+            this.lbl2.Name = "lbl2";
+            this.lbl2.Size = new System.Drawing.Size(0, 21);
+            this.lbl2.TabIndex = 1;
+            // 
+            // txt3
+            // 
+            this.txt3.Location = new System.Drawing.Point(26, 259);
+            this.txt3.Name = "txt3";
+            this.txt3.Size = new System.Drawing.Size(233, 28);
+            this.txt3.TabIndex = 0;
+            // 
+            // lbl3
+            // 
+            this.lbl3.AutoSize = true;
+            this.lbl3.Location = new System.Drawing.Point(28, 237);
+            this.lbl3.Name = "lbl3";
+            this.lbl3.Size = new System.Drawing.Size(0, 21);
+            this.lbl3.TabIndex = 1;
+            // 
+            // txt4
+            // 
+            this.txt4.Location = new System.Drawing.Point(26, 321);
+            this.txt4.Name = "txt4";
+            this.txt4.Size = new System.Drawing.Size(233, 28);
+            this.txt4.TabIndex = 0;
+            // 
+            // lbl4
+            // 
+            this.lbl4.AutoSize = true;
+            this.lbl4.Location = new System.Drawing.Point(28, 299);
+            this.lbl4.Name = "lbl4";
+            this.lbl4.Size = new System.Drawing.Size(0, 21);
+            this.lbl4.TabIndex = 1;
+            // 
+            // cmb1
+            // 
+            this.cmb1.FormattingEnabled = true;
+            this.cmb1.Location = new System.Drawing.Point(344, 257);
+            this.cmb1.Name = "cmb1";
+            this.cmb1.Size = new System.Drawing.Size(150, 29);
+            this.cmb1.TabIndex = 2;
+            // 
+            // lbl7
+            // 
+            this.lbl7.AutoSize = true;
+            this.lbl7.Location = new System.Drawing.Point(346, 233);
+            this.lbl7.Name = "lbl7";
+            this.lbl7.Size = new System.Drawing.Size(0, 21);
+            this.lbl7.TabIndex = 1;
+            // 
+            // txtPesquisa
+            // 
+            this.txtPesquisa.Location = new System.Drawing.Point(26, 37);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(700, 28);
+            this.txtPesquisa.TabIndex = 3;
+            this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
+            // 
+            // lblPesquisa
+            // 
+            this.lblPesquisa.AutoSize = true;
+            this.lblPesquisa.Location = new System.Drawing.Point(22, 13);
+            this.lblPesquisa.Name = "lblPesquisa";
+            this.lblPesquisa.Size = new System.Drawing.Size(59, 21);
+            this.lblPesquisa.TabIndex = 1;
+            this.lblPesquisa.Text = "Pesquisa";
+            // 
+            // btnInfoCliente
+            // 
+            this.btnInfoCliente.Enabled = false;
+            this.btnInfoCliente.Location = new System.Drawing.Point(15, 27);
+            this.btnInfoCliente.Name = "btnInfoCliente";
+            this.btnInfoCliente.Size = new System.Drawing.Size(89, 34);
+            this.btnInfoCliente.TabIndex = 1;
+            this.btnInfoCliente.Text = "Informações";
+            this.btnInfoCliente.UseVisualStyleBackColor = true;
+            this.btnInfoCliente.Click += new System.EventHandler(this.btnInfoCliente_Click);
+            // 
+            // btnProdutos
+            // 
+            this.btnProdutos.Enabled = false;
+            this.btnProdutos.Location = new System.Drawing.Point(19, 27);
+            this.btnProdutos.Name = "btnProdutos";
+            this.btnProdutos.Size = new System.Drawing.Size(93, 33);
+            this.btnProdutos.TabIndex = 0;
+            this.btnProdutos.Text = "Produtos";
+            this.btnProdutos.UseVisualStyleBackColor = true;
+            this.btnProdutos.Click += new System.EventHandler(this.btnProdutos_Click);
+            // 
+            // btnProdutosEstoque
+            // 
+            this.btnProdutosEstoque.Enabled = false;
+            this.btnProdutosEstoque.Location = new System.Drawing.Point(128, 27);
+            this.btnProdutosEstoque.Name = "btnProdutosEstoque";
+            this.btnProdutosEstoque.Size = new System.Drawing.Size(107, 33);
+            this.btnProdutosEstoque.TabIndex = 1;
+            this.btnProdutosEstoque.Text = "Descontinuado";
+            this.btnProdutosEstoque.UseVisualStyleBackColor = true;
+            // 
             // FrmAreaDoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1813, 527);
+            this.BackColor = System.Drawing.Color.SeaGreen;
+            this.ClientSize = new System.Drawing.Size(1813, 594);
             this.Controls.Add(this.tlpInformacoes);
             this.Controls.Add(this.tlpConsultas);
             this.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmAreaDoUsuario";
             this.Text = "FrmAreaDoUsuario";
+            this.Load += new System.EventHandler(this.FrmAreaDoUsuario_Load);
             this.tlpConsultas.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -441,7 +655,10 @@
             this.tlpInformacoes.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInformacoes)).EndInit();
+            this.grbEdicao.ResumeLayout(false);
+            this.grbEdicao.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -450,7 +667,7 @@
 
         private System.Windows.Forms.TableLayoutPanel tlpConsultas;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnEnderecoPessoais;
+        private System.Windows.Forms.Button btnInformacoesPessoais;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnEdiClientes;
         private System.Windows.Forms.Button btnVizuClientes;
@@ -480,5 +697,25 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cln5;
         private System.Windows.Forms.DataGridViewTextBoxColumn cln6;
         private System.Windows.Forms.DataGridViewTextBoxColumn cln7;
+        private System.Windows.Forms.GroupBox grbEdicao;
+        private System.Windows.Forms.ComboBox cmb1;
+        private System.Windows.Forms.Label lbl3;
+        private System.Windows.Forms.Label lbl4;
+        private System.Windows.Forms.Label lbl5;
+        private System.Windows.Forms.TextBox txt4;
+        private System.Windows.Forms.TextBox txt3;
+        private System.Windows.Forms.TextBox txt5;
+        private System.Windows.Forms.Label lbl7;
+        private System.Windows.Forms.Label lbl6;
+        private System.Windows.Forms.TextBox txt6;
+        private System.Windows.Forms.Label lbl2;
+        private System.Windows.Forms.TextBox txt2;
+        private System.Windows.Forms.Label lbl1;
+        private System.Windows.Forms.TextBox txt1;
+        private System.Windows.Forms.TextBox txtPesquisa;
+        private System.Windows.Forms.Label lblPesquisa;
+        private System.Windows.Forms.Button btnInfoCliente;
+        private System.Windows.Forms.Button btnProdutos;
+        private System.Windows.Forms.Button btnProdutosEstoque;
     }
 }

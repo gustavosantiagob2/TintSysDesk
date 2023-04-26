@@ -47,11 +47,9 @@
             this.grbCliente.Controls.Add(this.dataGridView1);
             this.grbCliente.Controls.Add(this.label1);
             this.grbCliente.Controls.Add(this.txtListarPorCpf);
-            this.grbCliente.Location = new System.Drawing.Point(9, 26);
-            this.grbCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grbCliente.Location = new System.Drawing.Point(12, 48);
             this.grbCliente.Name = "grbCliente";
-            this.grbCliente.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.grbCliente.Size = new System.Drawing.Size(647, 306);
+            this.grbCliente.Size = new System.Drawing.Size(863, 566);
             this.grbCliente.TabIndex = 0;
             this.grbCliente.TabStop = false;
             this.grbCliente.Text = "Clientes";
@@ -59,10 +57,9 @@
             // btnListarTelefone
             // 
             this.btnListarTelefone.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListarTelefone.Location = new System.Drawing.Point(309, 76);
-            this.btnListarTelefone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnListarTelefone.Location = new System.Drawing.Point(412, 141);
             this.btnListarTelefone.Name = "btnListarTelefone";
-            this.btnListarTelefone.Size = new System.Drawing.Size(94, 28);
+            this.btnListarTelefone.Size = new System.Drawing.Size(125, 51);
             this.btnListarTelefone.TabIndex = 3;
             this.btnListarTelefone.Text = "Telefone";
             this.btnListarTelefone.UseVisualStyleBackColor = true;
@@ -70,10 +67,9 @@
             // btnListarEndereco
             // 
             this.btnListarEndereco.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListarEndereco.Location = new System.Drawing.Point(210, 76);
-            this.btnListarEndereco.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnListarEndereco.Location = new System.Drawing.Point(280, 141);
             this.btnListarEndereco.Name = "btnListarEndereco";
-            this.btnListarEndereco.Size = new System.Drawing.Size(94, 28);
+            this.btnListarEndereco.Size = new System.Drawing.Size(125, 51);
             this.btnListarEndereco.TabIndex = 3;
             this.btnListarEndereco.Text = "Endereço";
             this.btnListarEndereco.UseVisualStyleBackColor = true;
@@ -81,10 +77,9 @@
             // btnListarCliente
             // 
             this.btnListarCliente.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListarCliente.Location = new System.Drawing.Point(110, 76);
-            this.btnListarCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnListarCliente.Location = new System.Drawing.Point(147, 141);
             this.btnListarCliente.Name = "btnListarCliente";
-            this.btnListarCliente.Size = new System.Drawing.Size(94, 28);
+            this.btnListarCliente.Size = new System.Drawing.Size(125, 51);
             this.btnListarCliente.TabIndex = 3;
             this.btnListarCliente.Text = "Cliente";
             this.btnListarCliente.UseVisualStyleBackColor = true;
@@ -93,41 +88,39 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 117);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(9, 216);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(636, 168);
+            this.dataGridView1.Size = new System.Drawing.Size(848, 310);
             this.dataGridView1.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 26);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(5, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 17);
+            this.label1.Size = new System.Drawing.Size(167, 21);
             this.label1.TabIndex = 1;
             this.label1.Text = "Pesquisar pro cliente por cpf";
             // 
             // txtListarPorCpf
             // 
             this.txtListarPorCpf.Enabled = false;
-            this.txtListarPorCpf.Location = new System.Drawing.Point(4, 45);
-            this.txtListarPorCpf.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtListarPorCpf.Location = new System.Drawing.Point(5, 82);
             this.txtListarPorCpf.Name = "txtListarPorCpf";
-            this.txtListarPorCpf.Size = new System.Drawing.Size(619, 20);
+            this.txtListarPorCpf.Size = new System.Drawing.Size(824, 32);
             this.txtListarPorCpf.TabIndex = 0;
             // 
             // FrmListaCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1360, 460);
+            this.BackColor = System.Drawing.Color.SeaGreen;
+            this.ClientSize = new System.Drawing.Size(1813, 849);
             this.Controls.Add(this.grbCliente);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "FrmListaCliente";
             this.Text = "FrmListaCliente";
             this.grbCliente.ResumeLayout(false);

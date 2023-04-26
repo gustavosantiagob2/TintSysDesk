@@ -226,5 +226,8 @@
   <ItemGroup>
     <None Include="Resources\previous24.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoMercado.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -81,15 +81,14 @@
             this.Column5,
             this.Column6,
             this.Column7});
-            this.dgvProduto.Location = new System.Drawing.Point(44, 290);
-            this.dgvProduto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvProduto.Location = new System.Drawing.Point(59, 536);
             this.dgvProduto.Name = "dgvProduto";
             this.dgvProduto.ReadOnly = true;
             this.dgvProduto.RowHeadersVisible = false;
             this.dgvProduto.RowHeadersWidth = 51;
             this.dgvProduto.RowTemplate.Height = 24;
             this.dgvProduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProduto.Size = new System.Drawing.Size(500, 122);
+            this.dgvProduto.Size = new System.Drawing.Size(633, 225);
             this.dgvProduto.TabIndex = 0;
             this.dgvProduto.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduto_CellDoubleClick);
             // 
@@ -161,10 +160,9 @@
             // btnInserir
             // 
             this.btnInserir.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInserir.Location = new System.Drawing.Point(44, 228);
-            this.btnInserir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInserir.Location = new System.Drawing.Point(59, 422);
             this.btnInserir.Name = "btnInserir";
-            this.btnInserir.Size = new System.Drawing.Size(69, 23);
+            this.btnInserir.Size = new System.Drawing.Size(91, 42);
             this.btnInserir.TabIndex = 1;
             this.btnInserir.Text = "&Inserir";
             this.btnInserir.UseVisualStyleBackColor = true;
@@ -173,10 +171,9 @@
             // btnConsultar
             // 
             this.btnConsultar.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultar.Location = new System.Drawing.Point(131, 228);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConsultar.Location = new System.Drawing.Point(175, 422);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(69, 23);
+            this.btnConsultar.Size = new System.Drawing.Size(91, 42);
             this.btnConsultar.TabIndex = 3;
             this.btnConsultar.Text = "&Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
@@ -186,10 +183,9 @@
             // 
             this.btnEditar.Enabled = false;
             this.btnEditar.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(218, 228);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditar.Location = new System.Drawing.Point(291, 422);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(69, 23);
+            this.btnEditar.Size = new System.Drawing.Size(91, 42);
             this.btnEditar.TabIndex = 4;
             this.btnEditar.Text = "&Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
@@ -198,10 +194,9 @@
             // btnBuscar
             // 
             this.btnBuscar.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(144, 74);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscar.Location = new System.Drawing.Point(193, 136);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(69, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(91, 32);
             this.btnBuscar.TabIndex = 5;
             this.btnBuscar.Text = "...";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -210,50 +205,45 @@
             // txtId
             // 
             this.txtId.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(44, 74);
-            this.txtId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtId.Location = new System.Drawing.Point(59, 136);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(97, 24);
+            this.txtId.Size = new System.Drawing.Size(127, 28);
             this.txtId.TabIndex = 6;
             this.txtId.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtDesconto
             // 
             this.txtDesconto.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDesconto.Location = new System.Drawing.Point(271, 167);
-            this.txtDesconto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDesconto.Location = new System.Drawing.Point(361, 309);
             this.txtDesconto.Name = "txtDesconto";
-            this.txtDesconto.Size = new System.Drawing.Size(84, 24);
+            this.txtDesconto.Size = new System.Drawing.Size(111, 28);
             this.txtDesconto.TabIndex = 8;
             // 
             // txtDescricao
             // 
             this.txtDescricao.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescricao.Location = new System.Drawing.Point(44, 115);
-            this.txtDescricao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescricao.Location = new System.Drawing.Point(59, 213);
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(170, 24);
+            this.txtDescricao.Size = new System.Drawing.Size(225, 28);
             this.txtDescricao.TabIndex = 10;
             // 
             // txtCodBar
             // 
             this.txtCodBar.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodBar.Location = new System.Drawing.Point(44, 167);
-            this.txtCodBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCodBar.Location = new System.Drawing.Point(59, 309);
             this.txtCodBar.Name = "txtCodBar";
-            this.txtCodBar.Size = new System.Drawing.Size(116, 24);
+            this.txtCodBar.Size = new System.Drawing.Size(153, 28);
             this.txtCodBar.TabIndex = 11;
             // 
             // chkDescontinuado
             // 
             this.chkDescontinuado.AutoSize = true;
-            this.chkDescontinuado.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkDescontinuado.Location = new System.Drawing.Point(269, 74);
-            this.chkDescontinuado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkDescontinuado.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkDescontinuado.Location = new System.Drawing.Point(325, 138);
             this.chkDescontinuado.Name = "chkDescontinuado";
             this.chkDescontinuado.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.chkDescontinuado.Size = new System.Drawing.Size(74, 21);
+            this.chkDescontinuado.Size = new System.Drawing.Size(99, 28);
             this.chkDescontinuado.TabIndex = 12;
             this.chkDescontinuado.Text = "Arquivado";
             this.chkDescontinuado.UseVisualStyleBackColor = true;
@@ -263,10 +253,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(41, 58);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(55, 106);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(17, 17);
+            this.label1.Size = new System.Drawing.Size(20, 21);
             this.label1.TabIndex = 13;
             this.label1.Text = "Id";
             // 
@@ -274,10 +263,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(41, 99);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(55, 183);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 17);
+            this.label2.Size = new System.Drawing.Size(63, 21);
             this.label2.TabIndex = 14;
             this.label2.Text = "Descrição";
             // 
@@ -285,10 +273,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(41, 151);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(55, 279);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 17);
+            this.label3.Size = new System.Drawing.Size(97, 21);
             this.label3.TabIndex = 15;
             this.label3.Text = "Codigo de Barra";
             // 
@@ -296,10 +283,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(167, 151);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(223, 279);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 17);
+            this.label4.Size = new System.Drawing.Size(67, 21);
             this.label4.TabIndex = 16;
             this.label4.Text = "Preço (R$)";
             // 
@@ -307,10 +293,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(280, 151);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(373, 279);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 17);
+            this.label5.Size = new System.Drawing.Size(80, 21);
             this.label5.TabIndex = 17;
             this.label5.Text = "Desconto (%)";
             // 
@@ -318,10 +303,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(215, 99);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(287, 183);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 17);
+            this.label6.Size = new System.Drawing.Size(55, 21);
             this.label6.TabIndex = 18;
             this.label6.Text = "Unidade";
             // 
@@ -341,18 +325,16 @@
             "Fardo",
             "MiliLitro",
             "Metro"});
-            this.cmbUnidade.Location = new System.Drawing.Point(218, 115);
-            this.cmbUnidade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbUnidade.Location = new System.Drawing.Point(291, 213);
             this.cmbUnidade.Name = "cmbUnidade";
-            this.cmbUnidade.Size = new System.Drawing.Size(124, 25);
+            this.cmbUnidade.Size = new System.Drawing.Size(164, 29);
             this.cmbUnidade.TabIndex = 19;
             // 
             // mskPreco
             // 
-            this.mskPreco.Location = new System.Drawing.Point(164, 171);
-            this.mskPreco.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mskPreco.Location = new System.Drawing.Point(218, 309);
             this.mskPreco.Name = "mskPreco";
-            this.mskPreco.Size = new System.Drawing.Size(104, 20);
+            this.mskPreco.Size = new System.Drawing.Size(137, 32);
             this.mskPreco.TabIndex = 20;
             this.mskPreco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mskPreco.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
@@ -369,14 +351,13 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewCheckBoxColumn1});
-            this.dataGridView1.Location = new System.Drawing.Point(44, 444);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Location = new System.Drawing.Point(768, 536);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(500, 103);
+            this.dataGridView1.Size = new System.Drawing.Size(667, 225);
             this.dataGridView1.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
@@ -448,36 +429,38 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(45, 423);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(789, 497);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 19);
+            this.label7.Size = new System.Drawing.Size(84, 24);
             this.label7.TabIndex = 14;
             this.label7.Text = "Arquivados";
             // 
             // txtPesquisar
             // 
-            this.txtPesquisar.Location = new System.Drawing.Point(44, 265);
+            this.txtPesquisar.Location = new System.Drawing.Point(59, 489);
+            this.txtPesquisar.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(500, 20);
+            this.txtPesquisar.Size = new System.Drawing.Size(609, 32);
             this.txtPesquisar.TabIndex = 21;
             this.txtPesquisar.TextChanged += new System.EventHandler(this.txtPesquisar_TextChanged);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::TintSysDesk.Properties.Resources.Search;
-            this.pictureBox1.Location = new System.Drawing.Point(499, 265);
+            this.pictureBox1.Location = new System.Drawing.Point(667, 489);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 20);
+            this.pictureBox1.Size = new System.Drawing.Size(59, 32);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
             // FrmProdutos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1072, 558);
+            this.BackColor = System.Drawing.Color.SeaGreen;
+            this.ClientSize = new System.Drawing.Size(1585, 1031);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtPesquisar);
             this.Controls.Add(this.mskPreco);
@@ -500,7 +483,7 @@
             this.Controls.Add(this.btnInserir);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dgvProduto);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "FrmProdutos";
             this.Text = "FrmProdutos";
             this.Load += new System.EventHandler(this.FrmProdutos_Load);
