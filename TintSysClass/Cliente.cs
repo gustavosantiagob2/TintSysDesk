@@ -162,11 +162,11 @@ namespace TintSysClass
             Banco.Fechar(cmd);
             return Lista;
         }
-        public static List<Cliente> ListarPorCpf (string cpf = null)
+        public static List<Cliente> ListarPorCpf (string cpf = "")
         {
             List<Cliente> lista = new List<Cliente>();
             var cmd = Banco.Abir();
-            cmd.CommandText = "select * from clientes where cpf ="+cpf;
+            cmd.CommandText = "select * from clientes where cpf like '%"+cpf+"%'";
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
