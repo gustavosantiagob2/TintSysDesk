@@ -50,7 +50,7 @@ namespace TintSysDesk
                 dgvInformacoes.Columns["cln5"].HeaderText = "Nivel";
                 dgvInformacoes.Rows[linha].Cells["cln5"].Value = info.Nivel.Nome;
 
-                dgvInformacoes.Columns["cln6"].Visible = true;
+                
                 dgvInformacoes.Columns["cln6"].HeaderText = "Ativo";
                 dgvInformacoes.Rows[linha].Cells["cln6"].Value = info.Ativo;
 

@@ -21,6 +21,7 @@ namespace TintSysDesk
         private void btnInserir_Click(object sender, EventArgs e)
         {
             Usuario usuario = new Usuario(
+
                 txtNome.Text, txtEmail.Text, txtSenha.Text, 
                 Nivel.ObterPorID(Convert.ToInt32(comboBox1.SelectedValue))
                 );
